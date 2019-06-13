@@ -10,7 +10,7 @@ using AIS_DB6.Models;
 
 namespace AIS_DB6.ViewModels
 {
-    class CrudVMBase :INotifyPropertyChanged
+    public class CrudVMBase :INotifyPropertyChanged
     {
 
         protected AisContext db = new AisContext();

@@ -11,6 +11,7 @@ using System.Windows;
 using AIS_DB6.Annotations;
 using AIS_DB6.Models;
 using AIS_DB6.Tools;
+using AIS_DB6.Views.Tables;
 
 namespace AIS_DB6.ViewModels
 {
@@ -21,6 +22,15 @@ namespace AIS_DB6.ViewModels
         private RelayCommand _addCommand;
         private RelayCommand _printCommand;
 
+        public RelayCommand AddCommand => _addCommand ?? (_addCommand = new RelayCommand(AddImplementation, (o => true )));
+
+        private void AddImplementation(object obj)
+        {
+            GoodsAdding ga = new GoodsAdding();
+            //ga.ShowDialog();
+            ga.ShowDialog();
+            RefreshData();
+        }
 
         public RelayCommand DeleteCommand =>
             _deleteCommand ?? (_deleteCommand = new RelayCommand(DeleteImplementation, CanExecuteCommand));
@@ -35,6 +45,7 @@ namespace AIS_DB6.ViewModels
             {
                 MessageBox.Show(e.Message);
             }
+            base.RefreshData();
         }
 
         private GoodVM _selectedGood;
@@ -49,7 +60,7 @@ namespace AIS_DB6.ViewModels
             }
         }
 
-        private ObservableCollection<GoodVM> _goods;
+        private ObservableCollection<GoodVM> _goods ;
 
         public ObservableCollection<GoodVM> Goods
         {
@@ -86,6 +97,8 @@ namespace AIS_DB6.ViewModels
             if (SelectedGood != null)
             {
                 db.Goods.Remove(SelectedGood.TheGood);
+                db.SaveChanges();
+                base.RefreshData();
             }
         }
 

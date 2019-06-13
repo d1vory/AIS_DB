@@ -11,21 +11,17 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using AIS_DB6.ViewModels;
 
 namespace AIS_DB6.Views.Tables
 {
     /// <summary>
-    /// Логика взаимодействия для GoodsAdding.xaml
+    /// Логика взаимодействия для GoodsEditing.xaml
     /// </summary>
-    public partial class GoodsAdding : Window
+    public partial class GoodsEditing : Window
     {
-        public GoodsAdding()
+        public GoodsEditing()
         {
             InitializeComponent();
-            DataContext = new GoodsAddingViewModel(this);
         }
-
-       
     }
 }
