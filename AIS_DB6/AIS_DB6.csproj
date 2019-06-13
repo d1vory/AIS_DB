@@ -83,16 +83,21 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Properties\Annotations.cs" />
+    <Compile Include="Tools\CrudVMBase.cs" />
+    <Compile Include="Tools\RelayCommand.cs" />
+    <Compile Include="ViewModels\GoodsViewModel.cs" />
+    <Compile Include="ViewModels\VMs\GoodVM.cs" />
     <Compile Include="Views\AdminMainPage.xaml.cs">
       <DependentUpon>AdminMainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\DirectorMainPage.xaml.cs">
       <DependentUpon>DirectorMainPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\GoodsAdding.xaml.cs">
+    <Compile Include="Views\Tables\GoodsAdding.xaml.cs">
       <DependentUpon>GoodsAdding.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\GoodsTable.xaml.cs">
+    <Compile Include="Views\Tables\GoodsTable.xaml.cs">
       <DependentUpon>GoodsTable.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
@@ -115,11 +120,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\GoodsAdding.xaml">
+    <Page Include="Views\Tables\GoodsAdding.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\GoodsTable.xaml">
+    <Page Include="Views\Tables\GoodsTable.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -163,8 +168,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ViewModels\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

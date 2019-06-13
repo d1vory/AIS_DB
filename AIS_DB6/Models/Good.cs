@@ -1,3 +1,5 @@
+using System.Drawing;
+
 namespace AIS_DB6.Models
 {
     using System;
@@ -15,6 +17,28 @@ namespace AIS_DB6.Models
             ContractClauses = new HashSet<ContractClauses>();
             InvoiceLinesGoods = new HashSet<InvoiceLinesGoods>();
         }
+
+        //public Good Copy(Good g)
+        //{
+        //    Good k = new Good();
+
+        //}
+
+
+        //public Good(Good g)
+        //{
+        //    GoodsId = g.GoodsId;
+        //    ProducerId = g.ProducerId;
+        //    GoodsGroupId = g.GoodsGroupId;
+        //    Name = g.Name;
+        //    SellingPrice = g.SellingPrice;
+        //    Characteristics = g.Characteristics;
+
+        //    //ContractClauses = g.ContractClauses;
+
+        //    //Producer = g.Producer;
+        //    //GoodsGroup = g.GoodsGroup;
+        //}
 
         [Key]
         public int GoodsId { get; set; }

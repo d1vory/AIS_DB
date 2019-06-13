@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using AIS_DB6.Models;
+using AIS_DB6.Views;
 
 namespace AIS_DB6
 {
@@ -20,9 +23,14 @@ namespace AIS_DB6
     /// </summary>
     public partial class MainWindow : Window
     {
+       
         public MainWindow()
         {
             InitializeComponent();
+
+           
+            
+            
 
             //DirectorMainPage dirPage = new DirectorMainPage();
             //this.Content = dirPage;
@@ -30,8 +38,8 @@ namespace AIS_DB6
             //AdminMainPage ap = new AdminMainPage();
             //this.Content = ap;
 
-            //TableShow ts = new TableShow();
-            //this.Content = ts;
+            GoodsTable gt = new GoodsTable();
+            this.Content = gt;
 
             //GoodsAdding ga = new GoodsAdding();
             //this.Content = ga;

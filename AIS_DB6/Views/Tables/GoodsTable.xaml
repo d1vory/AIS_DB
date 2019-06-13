@@ -15,20 +15,20 @@
             <RowDefinition Height="0.1*"></RowDefinition>
         </Grid.RowDefinitions>
 
-        <DataGrid Name ="goodsTable"  Grid.Row="0" SelectedItem="{Binding Path=SelectedTask, Mode=TwoWay}" 
-                  ItemsSource="{Binding Path= Tasks}"
-                  AutoGenerateColumns="False"
-                  
+        <DataGrid Name ="goodsTable"  Grid.Row="0" SelectedItem="{Binding Path=SelectedGood, Mode=TwoWay}" 
+                  ItemsSource="{Binding Path= Goods}"
+                  AutoGenerateColumns="False"                
                   SelectionMode="Single"
                   IsReadOnly="True"
+                  HeadersVisibility="Column"             
                   >
             <DataGrid.Columns >
-                <DataGridTextColumn Header="goods_ID" Binding="{Binding Path=GoodsID}"  Width="*" />
-                <DataGridTextColumn Header="producer_ID"  Binding="{Binding Path=ProducerID}"   Width="*" />
-                <DataGridTextColumn Header="goods_group_ID" Binding="{Binding Path=GoodsGroupID}"  Width="*" />
-                <DataGridTextColumn Header="name" Binding="{Binding Path=Name}"  Width="*" />
-                <DataGridTextColumn Header="selling_price" Binding="{Binding Path=SellingPrice}"   Width="*" />
-                <DataGridTextColumn Header="characteristics" Binding="{Binding Path=Characteristics}"  Width="*" />
+                <DataGridTextColumn Header="goods_ID" Binding="{Binding Path=TheGood.GoodsId}"  Width="*" />
+                <DataGridTextColumn Header="producer_ID"  Binding="{Binding Path=TheGood.ProducerId}"   Width="*" />
+                <DataGridTextColumn Header="goods_group_ID" Binding="{Binding Path=TheGood.GoodsGroupId}"  Width="*" />
+                <DataGridTextColumn Header="name" Binding="{Binding Path=TheGood.Name}"  Width="*" />
+                <DataGridTextColumn Header="selling_price" Binding="{Binding Path=TheGood.SellingPrice}"   Width="*" />
+                <DataGridTextColumn Header="characteristics" Binding="{Binding Path=TheGood.Characteristics}"  Width="*" />
             </DataGrid.Columns>
 
 
