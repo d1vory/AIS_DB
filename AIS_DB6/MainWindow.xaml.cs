@@ -15,6 +15,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using AIS_DB6.Models;
 using AIS_DB6.Views;
+using AIS_DB6.Views.Producers;
 
 namespace AIS_DB6
 {
@@ -38,8 +39,11 @@ namespace AIS_DB6
             //AdminMainPage ap = new AdminMainPage();
             //this.Content = ap;
 
-            GoodsTable gt = new GoodsTable();
-            this.Content = gt;
+            //GoodsTable gt = new GoodsTable();
+            //this.Content = gt;
+
+            ProducerTable pt = new ProducerTable();
+            this.Content = pt;
 
             //GoodsAdding ga = new GoodsAdding();
             //this.Content = ga;

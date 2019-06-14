@@ -90,6 +90,8 @@
     <Compile Include="ViewModels\Goods\GoodsEditingViewModel.cs" />
     <Compile Include="ViewModels\Goods\GoodsViewModel.cs" />
     <Compile Include="ViewModels\Goods\GoodVM.cs" />
+    <Compile Include="ViewModels\Producers\ProducerAddingViewModel.cs" />
+    <Compile Include="ViewModels\Producers\ProducerEditingViewModel.cs" />
     <Compile Include="ViewModels\Producers\ProducerViewModel.cs" />
     <Compile Include="ViewModels\Producers\ProducerVM.cs" />
     <Compile Include="Views\AdminMainPage.xaml.cs">
@@ -106,6 +108,12 @@
     </Compile>
     <Compile Include="Views\Goods\GoodsTable.xaml.cs">
       <DependentUpon>GoodsTable.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Producers\ProducerAdding.xaml.cs">
+      <DependentUpon>ProducerAdding.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Producers\ProducerEditing.xaml.cs">
+      <DependentUpon>ProducerEditing.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Producers\ProducerTable.xaml.cs">
       <DependentUpon>ProducerTable.xaml</DependentUpon>
@@ -139,6 +147,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Goods\GoodsTable.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Producers\ProducerAdding.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Producers\ProducerEditing.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -186,6 +202,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="ViewModels\GoodsGroup\" />
+    <Folder Include="Views\GoodsGroup\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

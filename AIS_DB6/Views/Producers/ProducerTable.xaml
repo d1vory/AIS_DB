@@ -16,19 +16,19 @@
             <RowDefinition Height="0.1*"></RowDefinition>
         </Grid.RowDefinitions>
 
-        <DataGrid Name ="goodsTable"  Grid.Row="0" SelectedItem="{Binding Path=SelectedGood, Mode=TwoWay}" 
-                  ItemsSource="{Binding Path= Goods}"
+        <DataGrid Name ="goodsTable"  Grid.Row="0" SelectedItem="{Binding Path=SelectedProducer, Mode=TwoWay}" 
+                  ItemsSource="{Binding Path= Producers}"
                   AutoGenerateColumns="False"                
                   SelectionMode="Single"
                   IsReadOnly="True"
-                  HeadersVisibility="Column"             
+                  HeadersVisibility="Column" SelectionChanged="GoodsTable_SelectionChanged"             
                   >
             <DataGrid.Columns >
                
                 <DataGridTextColumn Header="Код виробника"  Binding="{Binding Path=TheProducer.ProducerId, Mode=TwoWay}"   Width="*" />
               
                 <DataGridTextColumn Header="Назва" Binding="{Binding Path=TheProducer.Name, Mode=TwoWay}"  Width="*" />
-                <DataGridTextColumn Header="Досвід використання" Binding="{Binding Path=TheProducer.userExpierence, Mode=TwoWay}"   Width="*" />
+                <DataGridTextColumn Header="Досвід використання" Binding="{Binding Path=TheProducer.UserExpierence, Mode=TwoWay}"   Width="*" />
                 
             </DataGrid.Columns>
 

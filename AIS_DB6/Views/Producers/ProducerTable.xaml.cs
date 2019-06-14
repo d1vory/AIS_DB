@@ -17,5 +17,10 @@ namespace AIS_DB6.Views.Producers
 
             DataContext = new ProducerViewModel();
         }
+
+        private void GoodsTable_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

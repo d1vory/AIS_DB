@@ -31,7 +31,7 @@ namespace AIS_DB6.ViewModels
         }
         protected virtual void RefreshData()
         {
-         
+         GetData();
             
         }
         protected virtual void GetData()

@@ -40,17 +40,6 @@ namespace AIS_DB6.ViewModels.Goods
             }
 
 
-            //Good good = db.Goods.Find(GoodId);
-
-            //good.GoodsGroupId = SelectedGroupId;
-            //good.ProducerId = SelectedProducerId;
-            //good.Name = Name;
-            //good.Characteristics = Characteristics;
-            //good.SellingPrice = SellingPrice;
-
-            ////db.Goods.Add(good);
-            //await db.SaveChangesAsync();
-
             Thiswindow.Close();
         }
 
