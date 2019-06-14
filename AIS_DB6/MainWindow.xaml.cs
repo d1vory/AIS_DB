@@ -17,6 +17,7 @@ using AIS_DB6.Models;
 using AIS_DB6.ViewModels;
 using AIS_DB6.ViewModels.GoodsGroups;
 using AIS_DB6.ViewModels.Producers;
+using AIS_DB6.ViewModels.Suppliers;
 using AIS_DB6.Views;
 using AIS_DB6.Views.GoodsGroups;
 using AIS_DB6.Views.Producers;
@@ -73,6 +74,11 @@ namespace AIS_DB6
         private void Producers_OnClick(object sender, RoutedEventArgs e)
         {
             DataContext = new ProducerViewModel();
+        }
+
+        private void Suppliers_OnClick(object sender, RoutedEventArgs e)
+        {
+            DataContext = new SupplierViewModel();
         }
     }
 }

@@ -50,7 +50,7 @@ namespace AIS_DB6.ViewModels
         private void EditImplementation(object obj)
         {
             
-            GoodsEditing ge = new GoodsEditing(SelectedGood.TheGood);
+            GoodsAdding ge = new GoodsAdding(SelectedGood.TheGood);
             ge.ShowDialog();
 
             Good temp = db.Goods.Find(SelectedGood.TheGood.GoodsId);

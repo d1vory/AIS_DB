@@ -98,6 +98,10 @@
     <Compile Include="ViewModels\Producers\ProducerEditingViewModel.cs" />
     <Compile Include="ViewModels\Producers\ProducerViewModel.cs" />
     <Compile Include="ViewModels\Producers\ProducerVM.cs" />
+    <Compile Include="ViewModels\Suppliers\SupplierAddingViewModel.cs" />
+    <Compile Include="ViewModels\Suppliers\SupplierEditingViewModel.cs" />
+    <Compile Include="ViewModels\Suppliers\SupplierViewModel.cs" />
+    <Compile Include="ViewModels\Suppliers\SupplierVM.cs" />
     <Compile Include="Views\AdminMainPage.xaml.cs">
       <DependentUpon>AdminMainPage.xaml</DependentUpon>
     </Compile>
@@ -107,17 +111,11 @@
     <Compile Include="Views\GoodsGroups\GoodsGroupAdding.xaml.cs">
       <DependentUpon>GoodsGroupAdding.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\GoodsGroups\GoodsGroupEditing.xaml.cs">
-      <DependentUpon>GoodsGroupEditing.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Views\GoodsGroups\GoodsGroupTable.xaml.cs">
       <DependentUpon>GoodsGroupTable.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Goods\GoodsAdding.xaml.cs">
       <DependentUpon>GoodsAdding.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Goods\GoodsEditing.xaml.cs">
-      <DependentUpon>GoodsEditing.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Goods\GoodsTable.xaml.cs">
       <DependentUpon>GoodsTable.xaml</DependentUpon>
@@ -125,11 +123,14 @@
     <Compile Include="Views\Producers\ProducerAdding.xaml.cs">
       <DependentUpon>ProducerAdding.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Producers\ProducerEditing.xaml.cs">
-      <DependentUpon>ProducerEditing.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Views\Producers\ProducersTable.xaml.cs">
       <DependentUpon>ProducersTable.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Suppliers\SupplierAdding.xaml.cs">
+      <DependentUpon>SupplierAdding.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Suppliers\SuppliersTable.xaml.cs">
+      <DependentUpon>SuppliersTable.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -155,19 +156,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\GoodsGroups\GoodsGroupEditing.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Views\GoodsGroups\GoodsGroupTable.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Goods\GoodsAdding.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\Goods\GoodsEditing.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -179,11 +172,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Producers\ProducerEditing.xaml">
+    <Page Include="Views\Producers\ProducersTable.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Producers\ProducersTable.xaml">
+    <Page Include="Views\Suppliers\SupplierAdding.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Suppliers\SuppliersTable.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

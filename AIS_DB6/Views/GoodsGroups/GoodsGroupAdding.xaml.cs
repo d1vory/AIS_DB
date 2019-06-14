@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using AIS_DB6.Models;
 using AIS_DB6.ViewModels.GoodsGroups;
 
 namespace AIS_DB6.Views.GoodsGroups
@@ -24,6 +25,12 @@ namespace AIS_DB6.Views.GoodsGroups
         {
             InitializeComponent();
             DataContext = new GoodsGroupAddingViewModel(this);
+        }
+
+        public GoodsGroupAdding(GoodsGroup gg)
+        {
+            InitializeComponent();
+            DataContext = new GoodsGroupEditingViewModel(this,gg);
         }
     }
 }

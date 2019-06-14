@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using AIS_DB6.Models;
 using AIS_DB6.ViewModels.Producers;
 
 namespace AIS_DB6.Views.Producers
@@ -24,6 +25,12 @@ namespace AIS_DB6.Views.Producers
         {
             InitializeComponent();
             DataContext = new ProducerAddingViewModel(this);
+        }
+
+        public ProducerAdding(Producer p)
+        {
+            InitializeComponent();
+            DataContext = new ProducerEditingViewModel(this,p);
         }
     }
 }

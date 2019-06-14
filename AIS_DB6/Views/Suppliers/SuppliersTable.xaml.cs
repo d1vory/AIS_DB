@@ -10,22 +10,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
-using AIS_DB6.Models;
-using AIS_DB6.ViewModels.Producers;
 
-namespace AIS_DB6.Views.Producers
+namespace AIS_DB6.Views.Suppliers
 {
     /// <summary>
-    /// Логика взаимодействия для ProducerEditing.xaml
+    /// Логика взаимодействия для SuppliersTable.xaml
     /// </summary>
-    public partial class ProducerEditing : Window
+    public partial class SuppliersTable : UserControl
     {
-        public ProducerEditing(Producer pr)
+        public SuppliersTable()
         {
             InitializeComponent();
-
-            DataContext = new ProducerEditingViewModel(this, pr);
         }
     }
 }

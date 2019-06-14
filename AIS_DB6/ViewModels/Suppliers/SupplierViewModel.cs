@@ -8,12 +8,12 @@ using System.Threading.Tasks;
 using System.Windows;
 using AIS_DB6.Models;
 using AIS_DB6.Tools;
-using AIS_DB6.Views.Producers;
-using AIS_DB6.Views.Tables;
 
-namespace AIS_DB6.ViewModels.Producers
+using AIS_DB6.Views.Suppliers;
+
+namespace AIS_DB6.ViewModels.Suppliers
 {
-    class ProducerViewModel : CrudVMBase
+    class SupplierViewModel:CrudVMBase
     {
         private RelayCommand _editCommand;
         private RelayCommand _deleteCommand;
@@ -24,9 +24,9 @@ namespace AIS_DB6.ViewModels.Producers
 
         private void AddImplementation(object obj)
         {
-            ProducerAdding pa = new ProducerAdding();
-            //ga.ShowDialog();
-            pa.ShowDialog();
+            SupplierAdding sa = new SupplierAdding();
+            
+            sa.ShowDialog();
             RefreshData();
         }
 
@@ -36,11 +36,11 @@ namespace AIS_DB6.ViewModels.Producers
         private void EditImplementation(object obj)
         {
 
-            ProducerAdding pe = new ProducerAdding(SelectedProducer.TheProducer);
+            SupplierAdding pe = new SupplierAdding(SelectedSupplier.TheSupplier);
             pe.ShowDialog();
 
-           
-            
+
+
 
 
             RefreshData();
@@ -62,26 +62,26 @@ namespace AIS_DB6.ViewModels.Producers
             base.RefreshData();
         }
 
-        private ProducerVM _selectedProducer;
+        private SupplierVM _selectedSupplier;
 
-        public ProducerVM SelectedProducer
+        public SupplierVM SelectedSupplier
         {
-            get => _selectedProducer;
+            get => _selectedSupplier;
             set
             {
-                _selectedProducer = value;
+                _selectedSupplier = value;
                 base.OnPropertyChanged();
             }
         }
 
-        private ObservableCollection<ProducerVM> _producers;
+        private ObservableCollection<SupplierVM> _suppliers;
 
-        public ObservableCollection<ProducerVM> Producers
+        public ObservableCollection<SupplierVM> Suppliers
         {
-            get => _producers;
+            get => _suppliers;
             set
             {
-                _producers = value;
+                _suppliers = value;
                 base.OnPropertyChanged();
 
             }
@@ -89,7 +89,7 @@ namespace AIS_DB6.ViewModels.Producers
 
         protected override void RefreshData()
         {
-            Producers.Clear();
+            Suppliers.Clear();
 
             GetData();
 
@@ -102,28 +102,28 @@ namespace AIS_DB6.ViewModels.Producers
 
 
 
-            ObservableCollection<ProducerVM> producersTemp = new ObservableCollection<ProducerVM>();
-            var _producers = await
-                (from g in db.Producers
+            ObservableCollection<SupplierVM> supplierssTemp = new ObservableCollection<SupplierVM>();
+            var _suppliers = await
+                (from g in db.Suppliers
 
                  select g).ToListAsync();
 
 
-            foreach (Producer producer in _producers)
+            foreach (Supplier sup in _suppliers)
             {
-                producersTemp.Add(new ProducerVM() { TheProducer = producer });
+                supplierssTemp.Add(new SupplierVM() { TheSupplier = sup });
             }
 
-            Producers = producersTemp;
+            Suppliers = supplierssTemp;
 
         }
 
         protected override void DeleteCurrent()
         {
             //TODO do something with number lines
-            if (SelectedProducer != null)
+            if (SelectedSupplier != null)
             {
-                db.Producers.Remove(SelectedProducer.TheProducer);
+                db.Suppliers.Remove(SelectedSupplier.TheSupplier);
                 db.SaveChanges();
                 base.RefreshData();
             }
@@ -131,10 +131,10 @@ namespace AIS_DB6.ViewModels.Producers
 
         private bool CanExecuteCommand(object obj)
         {
-            return SelectedProducer != null;
+            return SelectedSupplier != null;
         }
 
-        public ProducerViewModel() : base()
+        public SupplierViewModel() : base()
         {
 
 

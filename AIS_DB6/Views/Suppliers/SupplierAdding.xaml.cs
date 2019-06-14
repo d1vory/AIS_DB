@@ -12,20 +12,25 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using AIS_DB6.Models;
-using AIS_DB6.ViewModels.Goods;
+using AIS_DB6.ViewModels.Suppliers;
 
-namespace AIS_DB6.Views.Tables
+namespace AIS_DB6.Views.Suppliers
 {
     /// <summary>
-    /// Логика взаимодействия для GoodsEditing.xaml
+    /// Логика взаимодействия для SupplierAdding.xaml
     /// </summary>
-    public partial class GoodsEditing : Window
+    public partial class SupplierAdding : Window
     {
-        public GoodsEditing(Good good)
+        public SupplierAdding()
         {
             InitializeComponent();
+            DataContext = new SupplierAddingViewModel(this);
+        }
 
-            DataContext = new GoodsEditingViewModel(this, good);
+        public SupplierAdding(Supplier s)
+        {
+            InitializeComponent();
+            DataContext = new SupplierEditingViewModel(this,s);
         }
     }
 }

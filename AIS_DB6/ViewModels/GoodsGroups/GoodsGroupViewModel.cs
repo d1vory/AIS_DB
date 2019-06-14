@@ -37,7 +37,7 @@ namespace AIS_DB6.ViewModels.GoodsGroups
         private void EditImplementation(object obj)
         {
 
-            GoodsGroupEditing ge = new GoodsGroupEditing(SelectedGoodsGroup.TheGoodsGroup);
+            GoodsGroupAdding ge = new GoodsGroupAdding(SelectedGoodsGroup.TheGoodsGroup);
             ge.ShowDialog();
 
            
