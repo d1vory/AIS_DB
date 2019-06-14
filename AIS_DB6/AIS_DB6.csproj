@@ -86,22 +86,23 @@
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Tools\CrudVMBase.cs" />
     <Compile Include="Tools\RelayCommand.cs" />
-    <Compile Include="ViewModels\GoodsAddingViewModel.cs" />
-    <Compile Include="ViewModels\GoodsViewModel.cs" />
-    <Compile Include="ViewModels\VMs\GoodVM.cs" />
+    <Compile Include="ViewModels\Goods\GoodsAddingViewModel.cs" />
+    <Compile Include="ViewModels\Goods\GoodsEditingViewModel.cs" />
+    <Compile Include="ViewModels\Goods\GoodsViewModel.cs" />
+    <Compile Include="ViewModels\Goods\GoodVM.cs" />
     <Compile Include="Views\AdminMainPage.xaml.cs">
       <DependentUpon>AdminMainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\DirectorMainPage.xaml.cs">
       <DependentUpon>DirectorMainPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Tables\GoodsAdding.xaml.cs">
+    <Compile Include="Views\Goods\GoodsAdding.xaml.cs">
       <DependentUpon>GoodsAdding.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Tables\GoodsEditing.xaml.cs">
+    <Compile Include="Views\Goods\GoodsEditing.xaml.cs">
       <DependentUpon>GoodsEditing.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Tables\GoodsTable.xaml.cs">
+    <Compile Include="Views\Goods\GoodsTable.xaml.cs">
       <DependentUpon>GoodsTable.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
@@ -124,15 +125,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Tables\GoodsAdding.xaml">
+    <Page Include="Views\Goods\GoodsAdding.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Tables\GoodsEditing.xaml">
+    <Page Include="Views\Goods\GoodsEditing.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Tables\GoodsTable.xaml">
+    <Page Include="Views\Goods\GoodsTable.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

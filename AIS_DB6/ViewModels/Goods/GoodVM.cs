@@ -10,39 +10,26 @@ using AIS_DB6.Models;
 
 namespace AIS_DB6.ViewModels
 {
-    public class CrudVMBase :INotifyPropertyChanged
+    class GoodVM:INotifyPropertyChanged
     {
+        private Good _theGood;
 
-        protected AisContext db = new AisContext();
-
+        public Good TheGood
+        {
+            get => _theGood;
+            set { _theGood = value; OnPropertyChanged();}
+        }
         
 
-        protected CrudVMBase()
+        public GoodVM()
         {
-            GetData();
-
+            TheGood = new Good();
         }
-
-        protected virtual void CommitUpdates()
-        {
-        }
-        protected virtual void DeleteCurrent()
-        {
-        }
-        protected virtual void RefreshData()
-        {
-         
-            
-        }
-        protected virtual void GetData()
-        {
-        }
-
 
         public event PropertyChangedEventHandler PropertyChanged;
 
         [NotifyPropertyChangedInvocator]
-        public virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }

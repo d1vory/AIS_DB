@@ -15,6 +15,7 @@ using AIS_DB6.Views.Tables;
 
 namespace AIS_DB6.ViewModels
 {
+    //TODO updated row doesnt update in datagridd FIX!
     class GoodsViewModel:CrudVMBase
     {
         private RelayCommand _editCommand;
@@ -29,6 +30,24 @@ namespace AIS_DB6.ViewModels
             GoodsAdding ga = new GoodsAdding();
             //ga.ShowDialog();
             ga.ShowDialog();
+            RefreshData();
+        }
+
+        public RelayCommand EditCommand =>
+            _editCommand ?? (_editCommand = new RelayCommand(EditImplementation, CanExecuteCommand));
+
+        private void EditImplementation(object obj)
+        {
+            
+            GoodsEditing ge = new GoodsEditing(SelectedGood.TheGood);
+            ge.ShowDialog();
+
+            Good temp = db.Goods.Find(SelectedGood.TheGood.GoodsId);
+            SelectedGood.TheGood.Characteristics = temp.Characteristics;
+            SelectedGood.TheGood.Name = temp.Name;
+            SelectedGood.TheGood.GoodsGroupId = temp.GoodsGroupId;
+            
+            
             RefreshData();
         }
 
@@ -73,22 +92,32 @@ namespace AIS_DB6.ViewModels
             }
         }
 
+        protected  override void RefreshData()
+        {
+            Goods.Clear();
+            
+           GetData();
+            
+
+        }
+
         protected async override void GetData()
         {
-
+          
             ObservableCollection<GoodVM> goodsTemp = new ObservableCollection<GoodVM>();
             var _goods = await
                 (from g in db.Goods
-                 orderby g.GoodsId
+                 
                  select g).ToListAsync();
 
-
+           
             foreach (Good good in _goods)
             {
                 goodsTemp.Add(new GoodVM(){TheGood = good});
             }
 
             Goods = goodsTemp;
+        
         }
 
         protected override void DeleteCurrent()

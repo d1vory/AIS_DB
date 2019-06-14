@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using AIS_DB6.Models;
+using AIS_DB6.ViewModels.Goods;
 
 namespace AIS_DB6.Views.Tables
 {
@@ -19,9 +21,11 @@ namespace AIS_DB6.Views.Tables
     /// </summary>
     public partial class GoodsEditing : Window
     {
-        public GoodsEditing()
+        public GoodsEditing(Good good)
         {
             InitializeComponent();
+
+            DataContext = new GoodsEditingViewModel(this, good);
         }
     }
 }

@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="GoodsEditing" Height="450" Width="800">
 
-    <Grid>
+     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="0.1*"></RowDefinition>
             <RowDefinition></RowDefinition>
@@ -40,38 +40,29 @@
 
 
                     </Grid.RowDefinitions>
-                    <TextBlock Grid.Row ="0" Grid.Column="0" Grid.ColumnSpan ="2" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Код товару" VerticalAlignment="Center"/>
-                    <TextBox Grid.Row ="1" Grid.Column="0" Grid.ColumnSpan ="2" HorizontalAlignment="Stretch" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Center" />
+                   
 
 
                     <TextBlock Grid.Row ="2" Grid.Column="0"  HorizontalAlignment="Center" TextWrapping="Wrap" Text="Код групи товару" VerticalAlignment="Center"/>
                     <TextBlock Grid.Row ="2" Grid.Column="1"  HorizontalAlignment="Center" TextWrapping="Wrap" Text="Код виробника" VerticalAlignment="Center"/>
 
-                    <!--<ComboBox  Grid.Row ="3" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Width="120">
-                        <TextBlock>1</TextBlock>
-                        <TextBlock>2</TextBlock>
-                        <TextBlock>3</TextBlock>
-                        <TextBlock>4</TextBlock>
-                        <TextBlock>5</TextBlock>
-                        <TextBlock>6</TextBlock>
+                    <ComboBox  Grid.Row ="3" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center"  ItemsSource ="{Binding Path= GoodsGroupIds}" SelectedItem="{Binding Path=SelectedGroupId}"  Width="120">
+                      
                     </ComboBox>
-                    <ComboBox  Grid.Row ="3" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="120" SelectionChanged="ComboBox_SelectionChanged">
-                        <TextBlock>1</TextBlock>
-                        <TextBlock>2</TextBlock>
-                        <TextBlock>3</TextBlock>
-                        <TextBlock>4</TextBlock>
-                    </ComboBox>-->
+                    <ComboBox  Grid.Row ="3" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="120" ItemsSource ="{Binding Path= ProducerIds}" SelectedItem="{Binding Path=SelectedProducerId}">
+                        
+                    </ComboBox>
 
                     <TextBlock Grid.Row ="4" Grid.Column="0" Grid.ColumnSpan ="2" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Назва" VerticalAlignment="Center"/>
-                    <TextBox Grid.Row ="5" Grid.Column="0" Grid.ColumnSpan ="2" HorizontalAlignment="Stretch" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Center" />
+                    <TextBox Grid.Row ="5" Grid.Column="0" Grid.ColumnSpan ="2" Text="{Binding Path=Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Stretch" Height="23" TextWrapping="Wrap"  VerticalAlignment="Center" />
 
                     <TextBlock Grid.Row ="6" Grid.Column="0" Grid.ColumnSpan ="2" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Характеристики" VerticalAlignment="Center"/>
-                    <TextBox Grid.Row ="7" Grid.Column="0" Grid.ColumnSpan ="2" HorizontalAlignment="Stretch" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Center" />
-                    <Button Grid.Row ="8" Grid.Column="0" Content="Скасувати" HorizontalAlignment="Center" VerticalAlignment="Center" Width="75"/>
-                    <Button Grid.Row ="8" Grid.Column="1" Content="Додати" HorizontalAlignment="Center" VerticalAlignment="Center" Width="75"/>
+                    <TextBox Grid.Row ="7" Grid.Column="0" Grid.ColumnSpan ="2" Text="{Binding Path=Characteristics, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Stretch" Height="23" TextWrapping="Wrap"  VerticalAlignment="Center" />
 
+                    <TextBlock Grid.Row ="8" Grid.Column="0" Grid.ColumnSpan ="2" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Ціна продажу" VerticalAlignment="Center"/>
+                    <TextBox Grid.Row ="9" Grid.Column="0" Grid.ColumnSpan ="2" Text="{Binding Path=SellingPrice, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Stretch" Height="23" TextWrapping="Wrap"  VerticalAlignment="Center" />
 
-                    <TextBox Grid.Row ="9" Grid.RowSpan="3" Grid.Column="0" Grid.ColumnSpan ="2" HorizontalAlignment="Stretch"  Margin="10 10" TextWrapping="Wrap" Text="" VerticalAlignment="Stretch" />
+                    <TextBox Grid.Row ="10" Grid.RowSpan="3" IsEnabled="False" Grid.Column="0" Grid.ColumnSpan ="2" HorizontalAlignment="Stretch"  Margin="10 10" TextWrapping="Wrap" Text="" VerticalAlignment="Stretch" />
 
                 </Grid>
             </Grid>
@@ -84,8 +75,8 @@
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <Button Grid.Column="0" Margin ="40 5" Content="Скасувати" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
-            <Button Grid.Column="1" Margin ="40 5" Content="Зберегти" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+            <Button Grid.Column="0" Margin ="40 5" IsCancel="True" Content="Скасувати" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+            <Button Grid.Column="1" Margin ="40 5" IsCancel="True" Command="{Binding Path= SaveCommand}" Content="Зберегти" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
         </Grid>
     </Grid>
 </Window>
