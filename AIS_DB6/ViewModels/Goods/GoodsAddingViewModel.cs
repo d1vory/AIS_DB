@@ -26,6 +26,7 @@ namespace AIS_DB6.ViewModels
 
         private async void SaveImplementation(object obj)
         {
+
             Good good = new Good();
             good.GoodsId = 0;
             good.GoodsGroupId = SelectedGroupId;

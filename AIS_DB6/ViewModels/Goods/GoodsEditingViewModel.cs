@@ -36,7 +36,7 @@ namespace AIS_DB6.ViewModels.Goods
                 good.Characteristics = Characteristics;
                 good.SellingPrice = SellingPrice;
                db.SaveChanges();
-              
+            
             }
 
 

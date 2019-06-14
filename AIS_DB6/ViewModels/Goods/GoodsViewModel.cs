@@ -103,6 +103,9 @@ namespace AIS_DB6.ViewModels
 
         protected async override void GetData()
         {
+            db = new AisContext();
+          
+              
           
             ObservableCollection<GoodVM> goodsTemp = new ObservableCollection<GoodVM>();
             var _goods = await
@@ -117,7 +120,7 @@ namespace AIS_DB6.ViewModels
             }
 
             Goods = goodsTemp;
-        
+          
         }
 
         protected override void DeleteCurrent()
