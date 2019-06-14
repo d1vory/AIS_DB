@@ -7,9 +7,9 @@ using System.Windows;
 using AIS_DB6.Models;
 using AIS_DB6.Tools;
 
-namespace AIS_DB6.ViewModels.Producers
+namespace AIS_DB6.ViewModels.GoodsGroups
 {
-    class ProducerAddingViewModel:CrudVMBase
+    class GoodsGroupAddingViewModel:CrudVMBase
     {
         private RelayCommand _saveCommand;
 
@@ -26,14 +26,12 @@ namespace AIS_DB6.ViewModels.Producers
         private async void SaveImplementation(object obj)
         {
 
-            Producer producer = new Producer();
-            producer.ProducerId = 0;
-            
-            producer.Name = Name;
-            producer.UserExpierence = UserExpierence ;
-           
+            GoodsGroup goodGroup = new GoodsGroup();
+            goodGroup.GoodsGroupId = 0;
+            goodGroup.Description = Characteristics;
+            goodGroup.Name = Name;
 
-            db.Producers.Add(producer);
+            db.GoodsGroup.Add(goodGroup);
             await db.SaveChangesAsync();
 
             Thiswindow.Close();
@@ -48,10 +46,7 @@ namespace AIS_DB6.ViewModels.Producers
             set => _thiswindow = value;
         }
 
-        
 
-       
-        
 
         private string _name;
 
@@ -61,30 +56,21 @@ namespace AIS_DB6.ViewModels.Producers
             set => _name = value;
         }
 
-        private double _sellingPrice;
 
-        public double SellingPrice
+
+        private string _characteristics;
+
+        public string Characteristics
         {
-            get => _sellingPrice;
-            set => _sellingPrice = value;
-        }
-
-        private string _userExpierence;
-
-        public string UserExpierence
-        {
-            get => _userExpierence;
-            set => _userExpierence = value;
+            get => _characteristics;
+            set => _characteristics = value;
         }
 
        
 
-        public ProducerAddingViewModel(Window w) : base()
+        public GoodsGroupAddingViewModel(Window w) : base()
         {
             Thiswindow = w;
         }
-
-       
-
     }
 }

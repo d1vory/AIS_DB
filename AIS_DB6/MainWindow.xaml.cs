@@ -15,6 +15,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using AIS_DB6.Models;
 using AIS_DB6.Views;
+using AIS_DB6.Views.GoodsGroups;
 using AIS_DB6.Views.Producers;
 
 namespace AIS_DB6
@@ -42,8 +43,11 @@ namespace AIS_DB6
             //GoodsTable gt = new GoodsTable();
             //this.Content = gt;
 
-            ProducerTable pt = new ProducerTable();
-            this.Content = pt;
+            //ProducerTable pt = new ProducerTable();
+            //this.Content = pt;
+
+            GoodsGroupTable ggt = new GoodsGroupTable();
+            this.Content = ggt;
 
             //GoodsAdding ga = new GoodsAdding();
             //this.Content = ga;

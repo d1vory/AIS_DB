@@ -40,6 +40,7 @@ namespace AIS_DB6.ViewModels.Goods
             }
 
 
+
             Thiswindow.Close();
         }
 

@@ -7,10 +7,11 @@ using System.Windows;
 using AIS_DB6.Models;
 using AIS_DB6.Tools;
 
-namespace AIS_DB6.ViewModels.Producers
+namespace AIS_DB6.ViewModels.GoodsGroups
 {
-    class ProducerEditingViewModel : CrudVMBase
+    class GoodsGroupEditingViewModel:CrudVMBase
     {
+
         private RelayCommand _saveCommand;
 
 
@@ -27,29 +28,20 @@ namespace AIS_DB6.ViewModels.Producers
         {
 
 
-            Producer producer = db.Producers.SingleOrDefault(g => g.ProducerId == ProducerId);
-            if (producer != null)
+            GoodsGroup goodGroup = db.GoodsGroup.SingleOrDefault(g => g.GoodsGroupId == GoodsGroupId);
+            if (goodGroup != null)
             {
-                
-                producer.ProducerId = ProducerId;
-                producer.Name = Name;
-                producer.UserExpierence = UserExpierence;
-                
+
+                goodGroup.Description = Characteristics;
+                goodGroup.Name = Name;
                 db.SaveChanges();
 
             }
 
-
             Thiswindow.Close();
         }
 
-        private int _producerId;
 
-        public int ProducerId
-        {
-            get => _producerId;
-            set => _producerId = value;
-        }
 
 
         private Window _thiswindow;
@@ -60,10 +52,13 @@ namespace AIS_DB6.ViewModels.Producers
             set => _thiswindow = value;
         }
 
-        
+        private int _goodsGroupId;
 
-       
-
+        public int GoodsGroupId
+        {
+            get => _goodsGroupId;
+            set => _goodsGroupId = value;
+        }
 
 
         private string _name;
@@ -78,30 +73,32 @@ namespace AIS_DB6.ViewModels.Producers
             }
         }
 
-        private string _userExpierence;
 
-        public string UserExpierence
+
+        private string _characteristics;
+
+        public string Characteristics
         {
-            get => _userExpierence;
+            get => _characteristics;
             set
             {
-                _userExpierence = value;
+                _characteristics = value;
                 OnPropertyChanged();
             }
         }
 
-       
+      
 
-        public ProducerEditingViewModel(Window w, Producer p) : base()
+        public GoodsGroupEditingViewModel(Window w, GoodsGroup g) : base()
         {
-            
+
             Thiswindow = w;
 
-            ProducerId = p.ProducerId;
-            Name = p.Name;
-            UserExpierence = p.UserExpierence;
-            
+
+            Name = g.Name;
+
+            Characteristics = g.Description;
+
         }
     }
 }
-

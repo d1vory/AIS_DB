@@ -113,7 +113,7 @@ namespace AIS_DB6.ViewModels
         {
             await Task.Run(() =>
             {
-                foreach (GoodsGroup gg in db.GoodsGroup)
+                foreach (Models.GoodsGroup gg in db.GoodsGroup)
                 {
                     GoodsGroupIds.Add(gg.GoodsGroupId);
                 }

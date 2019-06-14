@@ -86,6 +86,10 @@
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Tools\CrudVMBase.cs" />
     <Compile Include="Tools\RelayCommand.cs" />
+    <Compile Include="ViewModels\GoodsGroups\GoodsGroupAddingViewModel.cs" />
+    <Compile Include="ViewModels\GoodsGroups\GoodsGroupEditingViewModel.cs" />
+    <Compile Include="ViewModels\GoodsGroups\GoodsGroupViewModel.cs" />
+    <Compile Include="ViewModels\GoodsGroups\GoodsGroupVM.cs" />
     <Compile Include="ViewModels\Goods\GoodsAddingViewModel.cs" />
     <Compile Include="ViewModels\Goods\GoodsEditingViewModel.cs" />
     <Compile Include="ViewModels\Goods\GoodsViewModel.cs" />
@@ -99,6 +103,15 @@
     </Compile>
     <Compile Include="Views\DirectorMainPage.xaml.cs">
       <DependentUpon>DirectorMainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\GoodsGroups\GoodsGroupAdding.xaml.cs">
+      <DependentUpon>GoodsGroupAdding.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\GoodsGroups\GoodsGroupEditing.xaml.cs">
+      <DependentUpon>GoodsGroupEditing.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\GoodsGroups\GoodsGroupTable.xaml.cs">
+      <DependentUpon>GoodsGroupTable.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Goods\GoodsAdding.xaml.cs">
       <DependentUpon>GoodsAdding.xaml</DependentUpon>
@@ -135,6 +148,18 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\DirectorMainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\GoodsGroups\GoodsGroupAdding.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\GoodsGroups\GoodsGroupEditing.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\GoodsGroups\GoodsGroupTable.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -202,9 +227,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ViewModels\GoodsGroup\" />
-    <Folder Include="Views\GoodsGroup\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
