@@ -8,6 +8,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Navigation;
 using AIS_DB6.Annotations;
 using AIS_DB6.Models;
 using AIS_DB6.Tools;
@@ -22,6 +23,16 @@ namespace AIS_DB6.ViewModels
         private RelayCommand _deleteCommand;
         private RelayCommand _addCommand;
         private RelayCommand _printCommand;
+        //private RelayCommand _backCommand;
+
+        //public RelayCommand BackCommand =>
+        //    _backCommand ?? (_backCommand = new RelayCommand(BackImplementation, (o => true)));
+
+        //private void BackImplementation(object obj)
+        //{
+        //    Direc
+        //    NavigationService.Navigate(new Uri("mypage.xaml", UriKind.Relative));
+        //}
 
         public RelayCommand AddCommand => _addCommand ?? (_addCommand = new RelayCommand(AddImplementation, (o => true )));
 

@@ -128,8 +128,8 @@
     <Compile Include="Views\Producers\ProducerEditing.xaml.cs">
       <DependentUpon>ProducerEditing.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Producers\ProducerTable.xaml.cs">
-      <DependentUpon>ProducerTable.xaml</DependentUpon>
+    <Compile Include="Views\Producers\ProducersTable.xaml.cs">
+      <DependentUpon>ProducersTable.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -183,7 +183,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Producers\ProducerTable.xaml">
+    <Page Include="Views\Producers\ProducersTable.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

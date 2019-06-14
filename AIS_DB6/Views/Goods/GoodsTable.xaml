@@ -1,12 +1,11 @@
-﻿<Page x:Class="AIS_DB6.Views.GoodsTable"
-      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:AIS_DB6.Views"
-      mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
-      Title="GoodsTable">
+﻿<UserControl x:Class="AIS_DB6.Views.Goods.GoodsTable"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:AIS_DB6.Views.Goods"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
     <Grid >
 
         <Grid.RowDefinitions>
@@ -43,12 +42,15 @@
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
+
 
             <Button  Margin="5 0" Grid.Column="0" Command="{Binding Path= EditCommand}" Content="Редагувати"  ></Button>
             <Button Margin="5 0" Grid.Column="1" Command="{Binding Path = DeleteCommand}" Content="Видалити" ></Button>
             <Button Margin="5 0" Grid.Column="2" Command="{Binding Path=AddCommand}" Content="Додати"  ></Button>
             <Button Margin="5 0" Grid.Column="3" Command="{Binding Path=PrintCommand}" Content="Друкувати звіт"  ></Button>
+            <Button Margin="5 0" Grid.Column="4"  Command="{Binding Path = BackCommand}" Content="Назад" ></Button>
         </Grid>
     </Grid>
-</Page>
+</UserControl>

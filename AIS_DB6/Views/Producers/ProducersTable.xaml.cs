@@ -12,20 +12,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using AIS_DB6.ViewModels;
 
-namespace AIS_DB6.Views.Goods
+namespace AIS_DB6.Views.Producers
 {
     /// <summary>
-    /// Логика взаимодействия для GoodsTable.xaml
+    /// Логика взаимодействия для ProducersTable.xaml
     /// </summary>
-    public partial class GoodsTable : UserControl
+    public partial class ProducersTable : UserControl
     {
-        public GoodsTable()
+        public ProducersTable()
         {
             InitializeComponent();
-
-            DataContext = new GoodsViewModel();
         }
     }
 }
