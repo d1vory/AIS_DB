@@ -19,6 +19,7 @@ using AIS_DB6.ViewModels.GoodsGroups;
 using AIS_DB6.ViewModels.Producers;
 using AIS_DB6.ViewModels.Suppliers;
 using AIS_DB6.Views;
+using AIS_DB6.Views.Contracts;
 using AIS_DB6.Views.GoodsGroups;
 using AIS_DB6.Views.Producers;
 
@@ -38,6 +39,9 @@ namespace AIS_DB6
 
             //Frame f = new Frame();
             //f.Content = new DirectorMainPage();
+
+            ContractTable ct = new ContractTable();
+            this.Content = ct;
 
             //DirectorMainPage dirPage = new DirectorMainPage();
             //this.Content = dirPage;

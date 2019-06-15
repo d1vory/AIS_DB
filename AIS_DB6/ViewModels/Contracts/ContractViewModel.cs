@@ -1,35 +1,33 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.ComponentModel;
 using System.Data.Entity;
 using System.Linq;
-using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Navigation;
-using AIS_DB6.Annotations;
 using AIS_DB6.Models;
 using AIS_DB6.Tools;
+using AIS_DB6.Views.Contracts;
 using AIS_DB6.Views.Tables;
 
-namespace AIS_DB6.ViewModels
+namespace AIS_DB6.ViewModels.Contracts
 {
-    //TODO updated row doesnt update in datagridd FIX!
-    class GoodsViewModel:CrudVMBase
+    class ContractViewModel:CrudVMBase
     {
+
         private RelayCommand _editCommand;
         private RelayCommand _deleteCommand;
         private RelayCommand _addCommand;
         private RelayCommand _printCommand;
        
-        public RelayCommand AddCommand => _addCommand ?? (_addCommand = new RelayCommand(AddImplementation, (o => true )));
+
+        public RelayCommand AddCommand => _addCommand ?? (_addCommand = new RelayCommand(AddImplementation, (o => true)));
 
         private void AddImplementation(object obj)
         {
-            GoodsAdding ga = new GoodsAdding();
-            
+            ContractAdding ga = new ContractAdding();
+            //ga.ShowDialog();
             ga.ShowDialog();
             RefreshData();
         }
@@ -39,11 +37,12 @@ namespace AIS_DB6.ViewModels
 
         private void EditImplementation(object obj)
         {
-            
-            GoodsAdding ge = new GoodsAdding(SelectedGood.TheGood);
+
+            ContractAdding ge = new ContractAdding(SelectedContract.TheContract);
             ge.ShowDialog();
 
-           
+
+
             RefreshData();
         }
 
@@ -56,75 +55,75 @@ namespace AIS_DB6.ViewModels
             {
                 DeleteCurrent();
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 MessageBox.Show(e.Message);
             }
             base.RefreshData();
         }
 
-        private GoodVM _selectedGood;
+        private ContractVM _selectedContract;
 
-        public GoodVM SelectedGood
+        public ContractVM SelectedContract
         {
-            get => _selectedGood;
+            get => _selectedContract;
             set
             {
-                _selectedGood = value;
+                _selectedContract = value;
                 base.OnPropertyChanged();
             }
         }
 
-        private ObservableCollection<GoodVM> _goods ;
+        private ObservableCollection<ContractVM> _contracts;
 
-        public ObservableCollection<GoodVM> Goods
+        public ObservableCollection<ContractVM> Contracts
         {
-            get => _goods;
+            get => _contracts;
             set
             {
-                _goods = value;
+                _contracts = value;
                 base.OnPropertyChanged();
-              
+
             }
         }
 
-        protected  override void RefreshData()
+        protected override void RefreshData()
         {
-            Goods.Clear();
-            
-           GetData();
-            
+            Contracts.Clear();
+
+            GetData();
+
 
         }
 
         protected async override void GetData()
         {
             db = new AisContext();
-          
-              
-          
-            ObservableCollection<GoodVM> goodsTemp = new ObservableCollection<GoodVM>();
-            var _goods = await
-                (from g in db.Goods
-                 
+
+
+
+            ObservableCollection<ContractVM> contractsTemp = new ObservableCollection<ContractVM>();
+            var _contracts = await
+                (from g in db.Contracts
+
                  select g).ToListAsync();
 
-           
-            foreach (Good good in _goods)
+
+            foreach (Contract contract in _contracts)
             {
-                goodsTemp.Add(new GoodVM(){TheGood = good});
+                contractsTemp.Add(new ContractVM() { TheContract = contract });
             }
 
-            Goods = goodsTemp;
-          
+            Contracts = contractsTemp;
+
         }
 
         protected override void DeleteCurrent()
         {
-            //TODO do something with number lines
-            if (SelectedGood != null)
+            
+            if (SelectedContract != null)
             {
-                db.Goods.Remove(SelectedGood.TheGood);
+                db.Contracts.Remove(SelectedContract.TheContract);
                 db.SaveChanges();
                 base.RefreshData();
             }
@@ -132,16 +131,16 @@ namespace AIS_DB6.ViewModels
 
         private bool CanExecuteCommand(object obj)
         {
-            return SelectedGood != null;
+            return SelectedContract != null;
         }
 
-        public GoodsViewModel(): base()
+        public ContractViewModel() : base()
         {
-           
+
 
         }
 
 
-      
+
     }
 }

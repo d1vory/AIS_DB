@@ -1,9 +1,9 @@
-﻿<UserControl x:Class="AIS_DB6.Views.Goods.GoodsTable"
+﻿<UserControl x:Class="AIS_DB6.Views.Contracts.ContractTable"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:AIS_DB6.Views.Goods"
+             xmlns:local="clr-namespace:AIS_DB6.Views.Contracts"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid >
@@ -14,20 +14,20 @@
             <RowDefinition Height="0.1*"></RowDefinition>
         </Grid.RowDefinitions>
 
-        <DataGrid Name ="goodsTable"  Grid.Row="0" SelectedItem="{Binding Path=SelectedGood, Mode=TwoWay}" 
-                  ItemsSource="{Binding Path= Goods}"
+        <DataGrid Name ="goodsTable"  Grid.Row="0" SelectedItem="{Binding Path=SelectedContract, Mode=TwoWay}" 
+                  ItemsSource="{Binding Path= Contracts}"
                   AutoGenerateColumns="False"                
                   SelectionMode="Single"
                   IsReadOnly="True"
                   HeadersVisibility="Column"             
                   >
             <DataGrid.Columns >
-                <DataGridTextColumn Header="goods_ID" Binding="{Binding Path=TheGood.GoodsId, Mode=TwoWay}"  Width="*" />
-                <DataGridTextColumn Header="producer_ID"  Binding="{Binding Path=TheGood.ProducerId, Mode=TwoWay}"   Width="*" />
-                <DataGridTextColumn Header="goods_group_ID" Binding="{Binding Path=TheGood.GoodsGroupId, Mode=TwoWay}"  Width="*" />
-                <DataGridTextColumn Header="name" Binding="{Binding Path=TheGood.Name, Mode=TwoWay}"  Width="*" />
-                <DataGridTextColumn Header="selling_price" Binding="{Binding Path=TheGood.SellingPrice, Mode=TwoWay}"   Width="*" />
-                <DataGridTextColumn Header="characteristics" Binding="{Binding Path=TheGood.Characteristics, Mode=TwoWay}"  Width="*" />
+              
+                <DataGridTextColumn Header="Код договору" Binding="{Binding Path=TheContract.ContractId, Mode=TwoWay}"  Width="*" />
+                <DataGridTextColumn Header="Дата підписання"  Binding="{Binding Path=TheContract.SignDate, Mode=TwoWay}"   Width="*" />
+                <DataGridTextColumn Header="Дата закінчення" Binding="{Binding Path=TheContract.TerminationDate, Mode=TwoWay}"  Width="*" />
+                <DataGridTextColumn Header="Код постачальника"  Binding="{Binding Path=TheContract.SupplierId, Mode=TwoWay}"  Width="*" />
+                
             </DataGrid.Columns>
 
 
@@ -38,10 +38,10 @@
         <Grid  Grid.Row="1">
 
             <Grid.ColumnDefinitions >
-              
+                <ColumnDefinition  ></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
+
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
 
@@ -50,7 +50,7 @@
             <Button Margin="5 0" Grid.Column="1" Command="{Binding Path = DeleteCommand}" Content="Видалити" ></Button>
             <Button Margin="5 0" Grid.Column="2" Command="{Binding Path=AddCommand}" Content="Додати"  ></Button>
             <Button Margin="5 0" Grid.Column="3" Command="{Binding Path=PrintCommand}" Content="Друкувати звіт"  ></Button>
-          
+
         </Grid>
     </Grid>
 </UserControl>
