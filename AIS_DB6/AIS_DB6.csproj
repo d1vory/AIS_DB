@@ -122,6 +122,10 @@
     <Compile Include="ViewModels\Suppliers\SupplierEditingViewModel.cs" />
     <Compile Include="ViewModels\Suppliers\SupplierViewModel.cs" />
     <Compile Include="ViewModels\Suppliers\SupplierVM.cs" />
+    <Compile Include="ViewModels\Workers\WorkerAddingViewModel.cs" />
+    <Compile Include="ViewModels\Workers\WorkerEditingViewModel.cs" />
+    <Compile Include="ViewModels\Workers\WorkerViewModel.cs" />
+    <Compile Include="ViewModels\Workers\WorkerVM.cs" />
     <Compile Include="Views\AdminMainPage.xaml.cs">
       <DependentUpon>AdminMainPage.xaml</DependentUpon>
     </Compile>
@@ -181,6 +185,12 @@
     </Compile>
     <Compile Include="Views\Suppliers\SuppliersTable.xaml.cs">
       <DependentUpon>SuppliersTable.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Workers\WorkerAdding.xaml.cs">
+      <DependentUpon>WorkerAdding.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Workers\WorkerTable.xaml.cs">
+      <DependentUpon>WorkerTable.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -271,6 +281,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Suppliers\SuppliersTable.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Workers\WorkerAdding.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Workers\WorkerTable.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
