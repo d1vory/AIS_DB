@@ -45,13 +45,7 @@ namespace AIS_DB6.ViewModels.invoice__lines_Goods
             Thiswindow.Close();
         }
 
-        private int _goodId;
-
-        public int GoodId
-        {
-            get => _goodId;
-            set => _goodId = value;
-        }
+       
 
 
         private Window _thiswindow;

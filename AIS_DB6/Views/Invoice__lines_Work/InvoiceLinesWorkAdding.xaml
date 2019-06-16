@@ -1,0 +1,84 @@
+﻿<Window x:Class="AIS_DB6.Views.Invoice__lines_Work.InvoiceLinesWorkAdding"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AIS_DB6.Views.Invoice__lines_Work"
+        mc:Ignorable="d"
+        Title="InvoiceLinesWorkTableAdding" Height="450" Width="400">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.1*"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height ="0.1*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row ="0" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Додавання Роботи"  FontSize ="16" VerticalAlignment="Top"/>
+        <Grid Grid.Row ="1" >
+
+
+            <Grid Grid.Column="0">
+                <Grid>
+
+
+                    <Grid.RowDefinitions>
+
+
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition  ></RowDefinition>
+
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+
+
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+
+
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+
+
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+
+                    </Grid.RowDefinitions>
+
+
+
+                    <TextBlock Grid.Row ="0"   HorizontalAlignment="Center" TextWrapping="Wrap" Text="Код Накладної" VerticalAlignment="Bottom"/>
+                    <ComboBox  Grid.Row ="1"  HorizontalAlignment="Center" VerticalAlignment="Center"  ItemsSource ="{Binding Path= InvoiceIds}" SelectedItem="{Binding Path=SelectedInvoiceId}"  Width="120">
+                    </ComboBox>
+
+                    <TextBlock Grid.Row ="2"   HorizontalAlignment="Center" TextWrapping="Wrap" Text="Код Робочого" VerticalAlignment="Bottom"/>
+                    <ComboBox  Grid.Row ="3"  HorizontalAlignment="Center" VerticalAlignment="Center"  ItemsSource ="{Binding Path= WorkerIds}" SelectedItem="{Binding Path=SelectedWorkerId}"  Width="120">
+                    </ComboBox>
+
+                    <TextBlock Grid.Row ="4" Grid.Column="0"  HorizontalAlignment="Center" TextWrapping="Wrap" Text="Тип роботи" VerticalAlignment="Bottom"/>
+                    <TextBox Grid.Row ="5" Grid.Column="0"  Text="{Binding Path=TypeOfWork, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Stretch" Height="30" TextWrapping="Wrap"  VerticalAlignment="Center" />
+
+                    <TextBlock Grid.Row ="6" Grid.Column="0"  HorizontalAlignment="Center" TextWrapping="Wrap" Text="Вартість роботи" VerticalAlignment="Bottom"/>
+                    <TextBox Grid.Row ="7" Grid.Column="0" Text="{Binding Path=WorkCost, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Stretch" Height="30" TextWrapping="Wrap"  VerticalAlignment="Center" />
+
+
+                    <TextBlock Grid.Row ="8"  Grid.Column="0" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Дата початку робіт"  VerticalAlignment="Bottom" Margin="0 5"/>
+                    <DatePicker Grid.Row ="9"  Grid.Column="0"  SelectedDate="{Binding Path=SelectedDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Center" VerticalAlignment="Top" ></DatePicker>
+
+
+
+                </Grid>
+            </Grid>
+
+
+        </Grid>
+
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Margin ="40 5" IsCancel="True" Content="Скасувати" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+            <Button Grid.Column="1" Margin ="40 5" IsCancel="True" Command="{Binding Path= SaveCommand}" Content="Зберегти" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+        </Grid>
+
+    </Grid>
+</Window>
