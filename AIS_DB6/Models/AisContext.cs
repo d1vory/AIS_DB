@@ -63,7 +63,7 @@ namespace AIS_DB6.Models
                 .IsUnicode(false);
 
             modelBuilder.Entity<Client>()
-                .Property(e => e.AppartmentNumber)
+                .Property(e => e.ApartmentNumber)
                 .IsUnicode(false);
 
             modelBuilder.Entity<Good>()

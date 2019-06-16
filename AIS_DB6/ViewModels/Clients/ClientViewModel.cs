@@ -1,35 +1,31 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.ComponentModel;
 using System.Data.Entity;
 using System.Linq;
-using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Navigation;
-using AIS_DB6.Annotations;
 using AIS_DB6.Models;
 using AIS_DB6.Tools;
+using AIS_DB6.Views.Clients;
 using AIS_DB6.Views.Tables;
 
-namespace AIS_DB6.ViewModels
+namespace AIS_DB6.ViewModels.Clients
 {
-    //TODO updated row doesnt update in datagridd FIX!
-    class GoodsViewModel:CrudVMBase
+    class ClientViewModel:CrudVMBase
     {
         private RelayCommand _editCommand;
         private RelayCommand _deleteCommand;
         private RelayCommand _addCommand;
         private RelayCommand _printCommand;
-       
-        public RelayCommand AddCommand => _addCommand ?? (_addCommand = new RelayCommand(AddImplementation, (o => true )));
+
+        public RelayCommand AddCommand => _addCommand ?? (_addCommand = new RelayCommand(AddImplementation, (o => true)));
 
         private void AddImplementation(object obj)
         {
-            GoodsAdding ga = new GoodsAdding();
-            
+            ClientAdding ga = new ClientAdding();
+
             ga.ShowDialog();
             RefreshData();
         }
@@ -39,11 +35,11 @@ namespace AIS_DB6.ViewModels
 
         private void EditImplementation(object obj)
         {
-            
-            GoodsAdding ge = new GoodsAdding(SelectedGood.TheGood);
+
+            ClientAdding ge = new ClientAdding(SelectedClient.TheClient);
             ge.ShowDialog();
 
-           
+
             RefreshData();
         }
 
@@ -56,44 +52,44 @@ namespace AIS_DB6.ViewModels
             {
                 DeleteCurrent();
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 MessageBox.Show(e.Message);
             }
             base.RefreshData();
         }
 
-        private GoodVM _selectedGood;
+        private ClientVM _selectedClient;
 
-        public GoodVM SelectedGood
+        public ClientVM SelectedClient
         {
-            get => _selectedGood;
+            get => _selectedClient;
             set
             {
-                _selectedGood = value;
+                _selectedClient = value;
                 base.OnPropertyChanged();
             }
         }
 
-        private ObservableCollection<GoodVM> _goods ;
+        private ObservableCollection<ClientVM> _clients;
 
-        public ObservableCollection<GoodVM> Goods
+        public ObservableCollection<ClientVM> Clients
         {
-            get => _goods;
+            get => _clients;
             set
             {
-                _goods = value;
+                _clients = value;
                 base.OnPropertyChanged();
-              
+
             }
         }
 
-        protected  override void RefreshData()
+        protected override void RefreshData()
         {
-            Goods.Clear();
-            
-           GetData();
-            
+            Clients.Clear();
+
+            GetData();
+
 
         }
 
@@ -101,30 +97,30 @@ namespace AIS_DB6.ViewModels
         {
             db = new AisContext();
 
-            
-          
-            ObservableCollection<GoodVM> goodsTemp = new ObservableCollection<GoodVM>();
-            var _goods = await
-                (from g in db.Goods
-                 
+
+
+            ObservableCollection<ClientVM> clientsTemp = new ObservableCollection<ClientVM>();
+            var _clients = await
+                (from g in db.Clients
+
                  select g).ToListAsync();
 
-           
-            foreach (Good good in _goods)
+
+            foreach (Client client in _clients)
             {
-                goodsTemp.Add(new GoodVM(){TheGood = good});
+                clientsTemp.Add(new ClientVM() { TheClient = client });
             }
 
-            Goods = goodsTemp;
-          
+            Clients = clientsTemp;
+
         }
 
         protected override void DeleteCurrent()
         {
             //TODO do something with number lines
-            if (SelectedGood != null)
+            if (SelectedClient != null)
             {
-                db.Goods.Remove(SelectedGood.TheGood);
+                db.Clients.Remove(SelectedClient.TheClient);
                 db.SaveChanges();
                 base.RefreshData();
             }
@@ -132,16 +128,16 @@ namespace AIS_DB6.ViewModels
 
         private bool CanExecuteCommand(object obj)
         {
-            return SelectedGood != null;
+            return SelectedClient != null;
         }
 
-        public GoodsViewModel(): base()
+        public ClientViewModel() : base()
         {
-           
+
 
         }
 
 
-      
+
     }
 }

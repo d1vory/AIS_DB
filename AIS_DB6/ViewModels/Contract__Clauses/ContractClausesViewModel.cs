@@ -1,35 +1,31 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.ComponentModel;
 using System.Data.Entity;
 using System.Linq;
-using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Navigation;
-using AIS_DB6.Annotations;
 using AIS_DB6.Models;
 using AIS_DB6.Tools;
+using AIS_DB6.Views.Contract__Clauses;
 using AIS_DB6.Views.Tables;
 
-namespace AIS_DB6.ViewModels
+namespace AIS_DB6.ViewModels.Contract__Clauses
 {
-    //TODO updated row doesnt update in datagridd FIX!
-    class GoodsViewModel:CrudVMBase
+    class ContractClausesViewModel:CrudVMBase
     {
         private RelayCommand _editCommand;
         private RelayCommand _deleteCommand;
         private RelayCommand _addCommand;
         private RelayCommand _printCommand;
-       
-        public RelayCommand AddCommand => _addCommand ?? (_addCommand = new RelayCommand(AddImplementation, (o => true )));
+
+        public RelayCommand AddCommand => _addCommand ?? (_addCommand = new RelayCommand(AddImplementation, (o => true)));
 
         private void AddImplementation(object obj)
         {
-            GoodsAdding ga = new GoodsAdding();
-            
+            ContractClausesAdding ga = new ContractClausesAdding();
+
             ga.ShowDialog();
             RefreshData();
         }
@@ -39,11 +35,11 @@ namespace AIS_DB6.ViewModels
 
         private void EditImplementation(object obj)
         {
-            
-            GoodsAdding ge = new GoodsAdding(SelectedGood.TheGood);
+
+            ContractClausesAdding ge = new ContractClausesAdding(SelectedContractClauses.TheContractClauses);
             ge.ShowDialog();
 
-           
+
             RefreshData();
         }
 
@@ -56,43 +52,45 @@ namespace AIS_DB6.ViewModels
             {
                 DeleteCurrent();
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 MessageBox.Show(e.Message);
             }
             base.RefreshData();
         }
 
-        private GoodVM _selectedGood;
+        private ContractClausesVM _selectedContractClauses;
 
-        public GoodVM SelectedGood
+        public ContractClausesVM SelectedContractClauses
         {
-            get => _selectedGood;
+            get => _selectedContractClauses;
             set
             {
-                _selectedGood = value;
+                _selectedContractClauses = value;
                 base.OnPropertyChanged();
             }
         }
 
-        private ObservableCollection<GoodVM> _goods ;
+        private ObservableCollection<ContractClausesVM> _contractClauses;
 
-        public ObservableCollection<GoodVM> Goods
+        public ObservableCollection<ContractClausesVM> ContractClauses
         {
-            get => _goods;
+            get => _contractClauses;
             set
             {
-                _goods = value;
+                _contractClauses = value;
                 base.OnPropertyChanged();
-              
+
             }
         }
 
-        protected  override void RefreshData()
+        protected override void RefreshData()
         {
-            Goods.Clear();
-            
-           GetData();
+            ContractClauses.Clear();
+
+            GetData();
+
+            ContractClauses cc = db.ContractClauses.Find(1, 10);
             
 
         }
@@ -101,30 +99,30 @@ namespace AIS_DB6.ViewModels
         {
             db = new AisContext();
 
-            
-          
-            ObservableCollection<GoodVM> goodsTemp = new ObservableCollection<GoodVM>();
-            var _goods = await
-                (from g in db.Goods
-                 
+
+
+            ObservableCollection<ContractClausesVM> contractClausessTemp = new ObservableCollection<ContractClausesVM>();
+            var _contractClausess = await
+                (from g in db.ContractClauses
+
                  select g).ToListAsync();
 
-           
-            foreach (Good good in _goods)
+
+            foreach (ContractClauses contractClauses in _contractClausess)
             {
-                goodsTemp.Add(new GoodVM(){TheGood = good});
+                contractClausessTemp.Add(new ContractClausesVM() { TheContractClauses = contractClauses });
             }
 
-            Goods = goodsTemp;
-          
+            ContractClauses = contractClausessTemp;
+
         }
 
         protected override void DeleteCurrent()
         {
             //TODO do something with number lines
-            if (SelectedGood != null)
+            if (SelectedContractClauses != null)
             {
-                db.Goods.Remove(SelectedGood.TheGood);
+                db.ContractClauses.Remove(SelectedContractClauses.TheContractClauses);
                 db.SaveChanges();
                 base.RefreshData();
             }
@@ -132,16 +130,15 @@ namespace AIS_DB6.ViewModels
 
         private bool CanExecuteCommand(object obj)
         {
-            return SelectedGood != null;
+            return SelectedContractClauses != null;
         }
 
-        public GoodsViewModel(): base()
+        public ContractClausesViewModel() : base()
         {
-           
+
 
         }
 
 
-      
     }
 }

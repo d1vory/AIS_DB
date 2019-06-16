@@ -86,10 +86,18 @@
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Tools\CrudVMBase.cs" />
     <Compile Include="Tools\RelayCommand.cs" />
+    <Compile Include="ViewModels\Clients\ClientAddingViewModel.cs" />
+    <Compile Include="ViewModels\Clients\ClientEditingViewModel.cs" />
+    <Compile Include="ViewModels\Clients\ClientViewModel.cs" />
+    <Compile Include="ViewModels\Clients\ClientVM.cs" />
     <Compile Include="ViewModels\Contracts\ContractAddingViewModel.cs" />
     <Compile Include="ViewModels\Contracts\ContractEditingViewModel.cs" />
     <Compile Include="ViewModels\Contracts\ContractViewModel.cs" />
     <Compile Include="ViewModels\Contracts\ContractVM.cs" />
+    <Compile Include="ViewModels\Contract__Clauses\ContractClausesAddingViewModel.cs" />
+    <Compile Include="ViewModels\Contract__Clauses\ContractClausesEditingViewModel.cs" />
+    <Compile Include="ViewModels\Contract__Clauses\ContractClausesViewModel.cs" />
+    <Compile Include="ViewModels\Contract__Clauses\ContractClausesVM.cs" />
     <Compile Include="ViewModels\GoodsGroups\GoodsGroupAddingViewModel.cs" />
     <Compile Include="ViewModels\GoodsGroups\GoodsGroupEditingViewModel.cs" />
     <Compile Include="ViewModels\GoodsGroups\GoodsGroupViewModel.cs" />
@@ -109,11 +117,23 @@
     <Compile Include="Views\AdminMainPage.xaml.cs">
       <DependentUpon>AdminMainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Clients\ClientAdding.xaml.cs">
+      <DependentUpon>ClientAdding.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Clients\ClientsTable.xaml.cs">
+      <DependentUpon>ClientsTable.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Contracts\ContractAdding.xaml.cs">
       <DependentUpon>ContractAdding.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Contracts\ContractTable.xaml.cs">
       <DependentUpon>ContractTable.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Contract__Clauses\ContractClausesAdding.xaml.cs">
+      <DependentUpon>ContractClausesAdding.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Contract__Clauses\ContractClausesTable.xaml.cs">
+      <DependentUpon>ContractClausesTable.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\DirectorMainPage.xaml.cs">
       <DependentUpon>DirectorMainPage.xaml</DependentUpon>
@@ -158,11 +178,27 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\Clients\ClientAdding.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Clients\ClientsTable.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Contracts\ContractAdding.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Contracts\ContractTable.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Contract__Clauses\ContractClausesAdding.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Contract__Clauses\ContractClausesTable.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

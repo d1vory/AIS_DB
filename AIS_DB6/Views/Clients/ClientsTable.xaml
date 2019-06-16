@@ -1,0 +1,61 @@
+﻿<UserControl x:Class="AIS_DB6.Views.Clients.ClientsTable"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:AIS_DB6.Views.Clients"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid >
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.9*"></RowDefinition>
+
+            <RowDefinition Height="0.1*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <DataGrid Name ="goodsTable"  Grid.Row="0" SelectedItem="{Binding Path=SelectedClient, Mode=TwoWay}" 
+                  ItemsSource="{Binding Path= Clients}"
+                  AutoGenerateColumns="False"                
+                  SelectionMode="Single"
+                  IsReadOnly="True"
+                  HeadersVisibility="Column"             
+                  >
+            <DataGrid.Columns >
+                <DataGridTextColumn Header="Код клієнта" Binding="{Binding Path=TheClient.ClientId, Mode=TwoWay}"  Width="*" />
+                <DataGridTextColumn Header="Прізвище" Binding="{Binding Path=TheClient.Surname, Mode=TwoWay}"  Width="*" />
+                <DataGridTextColumn Header="Ім'я" Binding="{Binding Path=TheClient.Name, Mode=TwoWay}"  Width="*" />
+                <DataGridTextColumn Header="По-батькові" Binding="{Binding Path=TheClient.Patronym, Mode=TwoWay}"  Width="*" />
+                <DataGridTextColumn Header="Телефон" Binding="{Binding Path=TheClient.Telephone, Mode=TwoWay}"  Width="*" />
+                <DataGridTextColumn Header="Область" Binding="{Binding Path=TheClient.District, Mode=TwoWay}"  Width="*" />
+                <DataGridTextColumn Header="Район" Binding="{Binding Path=TheClient.Region, Mode=TwoWay}"  Width="*" />
+                <DataGridTextColumn Header="Місто" Binding="{Binding Path=TheClient.City, Mode=TwoWay}"  Width="*" />
+                <DataGridTextColumn Header="Вулиця" Binding="{Binding Path=TheClient.Street, Mode=TwoWay}"  Width="*" />
+                <DataGridTextColumn Header="Номер будинку" Binding="{Binding Path=TheClient.FlatNumber, Mode=TwoWay}"  Width="*" />
+                <DataGridTextColumn Header="Номер квартири" Binding="{Binding Path=TheClient.ApartmentNumber, Mode=TwoWay}"  Width="*" />
+            </DataGrid.Columns>
+
+
+        </DataGrid>
+
+
+
+        <Grid  Grid.Row="1">
+
+            <Grid.ColumnDefinitions >
+
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+
+            <Button  Margin="5 0" Grid.Column="0" Command="{Binding Path= EditCommand}" Content="Редагувати"  ></Button>
+            <Button Margin="5 0" Grid.Column="1" Command="{Binding Path = DeleteCommand}" Content="Видалити" ></Button>
+            <Button Margin="5 0" Grid.Column="2" Command="{Binding Path=AddCommand}" Content="Додати"  ></Button>
+            <Button Margin="5 0" Grid.Column="3" Command="{Binding Path=PrintCommand}" Content="Друкувати звіт"  ></Button>
+
+        </Grid>
+    </Grid>
+</UserControl>
