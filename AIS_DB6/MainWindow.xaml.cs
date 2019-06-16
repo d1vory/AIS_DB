@@ -23,6 +23,7 @@ using AIS_DB6.Views.Clients;
 using AIS_DB6.Views.Contracts;
 using AIS_DB6.Views.Contract__Clauses;
 using AIS_DB6.Views.GoodsGroups;
+using AIS_DB6.Views.Invoices;
 using AIS_DB6.Views.Producers;
 
 namespace AIS_DB6
@@ -48,9 +49,11 @@ namespace AIS_DB6
             //ContractClausesTable cct = new ContractClausesTable();
             //this.Content = cct;
 
+            InvoiceTable it = new InvoiceTable();
+            this.Content = it;
 
-            ClientsTable ct = new ClientsTable();
-            this.Content = ct;
+            //ClientsTable ct = new ClientsTable();
+            //this.Content = ct;
 
             //DirectorMainPage dirPage = new DirectorMainPage();
             //this.Content = dirPage;
