@@ -110,6 +110,10 @@
     <Compile Include="ViewModels\Invoices\InvoiceEdtingViewModel.cs" />
     <Compile Include="ViewModels\Invoices\InvoiceViewModel.cs" />
     <Compile Include="ViewModels\Invoices\InvoiceVM.cs" />
+    <Compile Include="ViewModels\invoice__lines_Goods\InvLinesGoodsViewModel.cs" />
+    <Compile Include="ViewModels\invoice__lines_Goods\InvoiceLinesGoodsAddingViewModel.cs" />
+    <Compile Include="ViewModels\invoice__lines_Goods\InvoiceLinesGoodsEditingViewModel.cs" />
+    <Compile Include="ViewModels\invoice__lines_Goods\InvoiceLinesGoodsVM.cs" />
     <Compile Include="ViewModels\Producers\ProducerAddingViewModel.cs" />
     <Compile Include="ViewModels\Producers\ProducerEditingViewModel.cs" />
     <Compile Include="ViewModels\Producers\ProducerViewModel.cs" />
@@ -159,6 +163,12 @@
     </Compile>
     <Compile Include="Views\Invoices\InvoiceTable.xaml.cs">
       <DependentUpon>InvoiceTable.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Invoice__lines_Goods\InvoiceLInesGoodsAdding.xaml.cs">
+      <DependentUpon>InvoiceLInesGoodsAdding.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Invoice__lines_Goods\InvoiceLinesGoodsTable.xaml.cs">
+      <DependentUpon>InvoiceLinesGoodsTable.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Producers\ProducerAdding.xaml.cs">
       <DependentUpon>ProducerAdding.xaml</DependentUpon>
@@ -237,6 +247,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Invoices\InvoiceTable.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Invoice__lines_Goods\InvoiceLInesGoodsAdding.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Invoice__lines_Goods\InvoiceLinesGoodsTable.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -24,6 +24,7 @@ using AIS_DB6.Views.Contracts;
 using AIS_DB6.Views.Contract__Clauses;
 using AIS_DB6.Views.GoodsGroups;
 using AIS_DB6.Views.Invoices;
+using AIS_DB6.Views.Invoice__lines_Goods;
 using AIS_DB6.Views.Producers;
 
 namespace AIS_DB6
@@ -49,8 +50,11 @@ namespace AIS_DB6
             //ContractClausesTable cct = new ContractClausesTable();
             //this.Content = cct;
 
-            InvoiceTable it = new InvoiceTable();
-            this.Content = it;
+            //InvoiceTable it = new InvoiceTable();
+            //this.Content = it;
+
+            InvoiceLinesGoodsTable ilgt = new InvoiceLinesGoodsTable();
+            this.Content = ilgt;
 
             //ClientsTable ct = new ClientsTable();
             //this.Content = ct;
