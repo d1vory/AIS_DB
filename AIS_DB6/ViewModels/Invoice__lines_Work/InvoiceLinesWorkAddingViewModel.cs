@@ -20,24 +20,26 @@ namespace AIS_DB6.ViewModels.Invoice__lines_Work
 
         private bool CanExecute(object arg)
         {
-            return SelectedInvoiceId != 0 && SelectedWorkerId != 0 && TypeOfWork != null && WorkCost != 0.0;
+            return  SelectedWorkerId != 0 && TypeOfWork != null && WorkCost != 0.0;
         }
 
         private async void SaveImplementation(object obj)
         {
-            InvoiceLinesWork ilw = new InvoiceLinesWork();
-            ilw.InvoiceId = SelectedInvoiceId;
-            ilw.WorkerId = SelectedWorkerId;
-            ilw.StartDate = SelectedDate;
-            ilw.WorkCost = WorkCost;
-            ilw.TypeOfWork = TypeOfWork;
-            ilw.Invoice = db.Invoices.Find(SelectedInvoiceId);
-            ilw.Worker = db.Workers.Find(SelectedWorkerId);
-            db.InvoiceLinesWork.Add(ilw);
+          Thiswindow.DialogResult = true;
 
-            await db.SaveChangesAsync();
+            //InvoiceLinesWork ilw = new InvoiceLinesWork();
+            //ilw.InvoiceId = SelectedInvoiceId;
+            //ilw.WorkerId = SelectedWorkerId;
+            //ilw.StartDate = SelectedDate;
+            //ilw.WorkCost = WorkCost;
+            //ilw.TypeOfWork = TypeOfWork;
+            //ilw.Invoice = db.Invoices.Find(SelectedInvoiceId);
+            //ilw.Worker = db.Workers.Find(SelectedWorkerId);
+            //db.InvoiceLinesWork.Add(ilw);
 
-            Thiswindow.Close();
+            //await db.SaveChangesAsync();
+
+            //Thiswindow.Close();
         }
 
 

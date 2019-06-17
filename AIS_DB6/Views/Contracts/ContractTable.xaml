@@ -27,7 +27,8 @@
                 <DataGridTextColumn Header="Дата підписання"  Binding="{Binding Path=TheContract.SignDate, Mode=TwoWay}"   Width="*" />
                 <DataGridTextColumn Header="Дата закінчення" Binding="{Binding Path=TheContract.TerminationDate, Mode=TwoWay}"  Width="*" />
                 <DataGridTextColumn Header="Код постачальника"  Binding="{Binding Path=TheContract.SupplierId, Mode=TwoWay}"  Width="*" />
-                
+                <DataGridTextColumn Header="Тривалість(днів)" Binding="{Binding Path=Duration, Mode=TwoWay}"  Width="*" />
+                <DataGridTextColumn Header="Загальна вартість"  Binding="{Binding Path=TotalCost, Mode=TwoWay}"  Width="*" />
             </DataGrid.Columns>
 
 

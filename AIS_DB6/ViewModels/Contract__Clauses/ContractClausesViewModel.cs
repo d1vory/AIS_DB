@@ -90,8 +90,6 @@ namespace AIS_DB6.ViewModels.Contract__Clauses
 
             GetData();
 
-            ContractClauses cc = db.ContractClauses.Find(1, 10);
-            
 
         }
 
@@ -110,7 +108,7 @@ namespace AIS_DB6.ViewModels.Contract__Clauses
 
             foreach (ContractClauses contractClauses in _contractClausess)
             {
-                contractClausessTemp.Add(new ContractClausesVM() { TheContractClauses = contractClauses });
+                contractClausessTemp.Add(new ContractClausesVM() { TheContractClauses = contractClauses,LinePrice = contractClauses.GoodsQuantity * contractClauses.Good.SellingPrice});
             }
 
             ContractClauses = contractClausessTemp;

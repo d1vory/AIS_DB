@@ -111,7 +111,7 @@ namespace AIS_DB6.ViewModels.Contracts
 
             foreach (Contract contract in _contracts)
             {
-                contractsTemp.Add(new ContractVM() { TheContract = contract });
+               contractsTemp.Add(new ContractVM() { TheContract = contract,Duration = (contract.TerminationDate - contract.SignDate).Days});
             }
 
             Contracts = contractsTemp;

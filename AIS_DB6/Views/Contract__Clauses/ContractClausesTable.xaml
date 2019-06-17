@@ -25,6 +25,7 @@
                 <DataGridTextColumn Header="Код договору" Binding="{Binding Path=TheContractClauses.ContractId, Mode=TwoWay}"  Width="*" />
                 <DataGridTextColumn Header="Код товару"  Binding="{Binding Path=TheContractClauses.GoodsId, Mode=TwoWay}"   Width="*" />
                 <DataGridTextColumn Header="кількість товару" Binding="{Binding Path=TheContractClauses.GoodsQuantity, Mode=TwoWay}"  Width="*" />
+                <DataGridTextColumn Header="Ціна рядку" Binding="{Binding Path=LinePrice, Mode=TwoWay}"  Width="*" />
              </DataGrid.Columns>
 
 

@@ -20,10 +20,47 @@ namespace AIS_DB6.ViewModels.Contracts
             set { _theContract = value; OnPropertyChanged(); }
         }
 
+        private int _duration;
+
+        public int Duration
+        {
+            get => _duration;
+            set
+            {
+                _duration = value;
+                OnPropertyChanged();
+            }
+        }
+
+
+        private double _totalCost;
+
+        public double TotalCost
+        {
+            get => _totalCost;
+            set
+            {
+                _totalCost = value;
+                OnPropertyChanged();
+            }
+        }
+
+        double CalculateTotalCost()
+        {
+            double res = 0;
+            foreach (ContractClauses cc in TheContract.ContractClauses)
+            {
+                res += cc.GoodsQuantity * cc.Good.SellingPrice;
+            }
+
+            return res;
+        }
+
 
         public ContractVM()
         {
             TheContract = new Contract();
+            TotalCost = CalculateTotalCost();
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

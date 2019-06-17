@@ -20,6 +20,23 @@ namespace AIS_DB6.ViewModels.Contract__Clauses
             set { _theContractClauses = value; OnPropertyChanged(); }
         }
 
+        private double _linePrice;
+
+        public double LinePrice
+        {
+            get => _linePrice;
+            set
+            {
+                _linePrice = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public  void  CalculateLinePrice(Good g)
+        {
+            LinePrice = TheContractClauses.GoodsQuantity * g.SellingPrice;
+        }
+
 
         public ContractClausesVM()
         {

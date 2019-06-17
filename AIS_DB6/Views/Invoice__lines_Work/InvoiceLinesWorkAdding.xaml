@@ -33,37 +33,27 @@
                         <RowDefinition></RowDefinition>
                         <RowDefinition></RowDefinition>
 
-
-                        <RowDefinition></RowDefinition>
-                        <RowDefinition></RowDefinition>
-
-
                         <RowDefinition></RowDefinition>
                         <RowDefinition></RowDefinition>
 
                     </Grid.RowDefinitions>
 
+                    
 
 
-                    <TextBlock Grid.Row ="0"   HorizontalAlignment="Center" TextWrapping="Wrap" Text="Код Накладної" VerticalAlignment="Bottom"/>
-                    <ComboBox  Grid.Row ="1"  HorizontalAlignment="Center" VerticalAlignment="Center"  ItemsSource ="{Binding Path= InvoiceIds}" SelectedItem="{Binding Path=SelectedInvoiceId}"  Width="120">
+                    <TextBlock Grid.Row ="0" Grid.Column="0"  HorizontalAlignment="Center" TextWrapping="Wrap" Text="Тип роботи" VerticalAlignment="Bottom"/>
+                    <TextBox Grid.Row ="1" Grid.Column="0" x:Name="myTypeWork" Text="{Binding Path=TypeOfWork, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Stretch" Height="30" TextWrapping="Wrap"  VerticalAlignment="Center" />
+
+                    <TextBlock Grid.Row ="2" Grid.Column="0"  HorizontalAlignment="Center" TextWrapping="Wrap" Text="Вартість роботи" VerticalAlignment="Bottom"/>
+                    <TextBox Grid.Row ="3" Grid.Column="0" x:Name="myWorkCost" Text="{Binding Path=WorkCost, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Stretch" Height="30" TextWrapping="Wrap"  VerticalAlignment="Center" />
+
+
+                    <TextBlock Grid.Row ="4"  Grid.Column="0" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Дата початку робіт"  VerticalAlignment="Bottom" Margin="0 5"/>
+                    <DatePicker Grid.Row ="5"  Grid.Column="0" x:Name="myDate" SelectedDate="{Binding Path=SelectedDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Center" VerticalAlignment="Top" ></DatePicker>
+
+                    <TextBlock Grid.Row ="6"   HorizontalAlignment="Center" TextWrapping="Wrap" Text="Код Робочого" VerticalAlignment="Bottom"/>
+                    <ComboBox  Grid.Row ="7"  HorizontalAlignment="Center" x:Name="WorkerCB" VerticalAlignment="Center"  ItemsSource ="{Binding Path= WorkerIds}" SelectedItem="WorkerId"  Width="120">
                     </ComboBox>
-
-                    <TextBlock Grid.Row ="2"   HorizontalAlignment="Center" TextWrapping="Wrap" Text="Код Робочого" VerticalAlignment="Bottom"/>
-                    <ComboBox  Grid.Row ="3"  HorizontalAlignment="Center" VerticalAlignment="Center"  ItemsSource ="{Binding Path= WorkerIds}" SelectedItem="{Binding Path=SelectedWorkerId}"  Width="120">
-                    </ComboBox>
-
-                    <TextBlock Grid.Row ="4" Grid.Column="0"  HorizontalAlignment="Center" TextWrapping="Wrap" Text="Тип роботи" VerticalAlignment="Bottom"/>
-                    <TextBox Grid.Row ="5" Grid.Column="0"  Text="{Binding Path=TypeOfWork, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Stretch" Height="30" TextWrapping="Wrap"  VerticalAlignment="Center" />
-
-                    <TextBlock Grid.Row ="6" Grid.Column="0"  HorizontalAlignment="Center" TextWrapping="Wrap" Text="Вартість роботи" VerticalAlignment="Bottom"/>
-                    <TextBox Grid.Row ="7" Grid.Column="0" Text="{Binding Path=WorkCost, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Stretch" Height="30" TextWrapping="Wrap"  VerticalAlignment="Center" />
-
-
-                    <TextBlock Grid.Row ="8"  Grid.Column="0" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Дата початку робіт"  VerticalAlignment="Bottom" Margin="0 5"/>
-                    <DatePicker Grid.Row ="9"  Grid.Column="0"  SelectedDate="{Binding Path=SelectedDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Center" VerticalAlignment="Top" ></DatePicker>
-
-
 
                 </Grid>
             </Grid>
@@ -77,7 +67,7 @@
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <Button Grid.Column="0" Margin ="40 5" IsCancel="True" Content="Скасувати" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
-            <Button Grid.Column="1" Margin ="40 5" IsCancel="True" Command="{Binding Path= SaveCommand}" Content="Зберегти" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+            <Button Grid.Column="1" Margin ="40 5" Name="SaveBTN" IsCancel="True" Click="SaveBTN_OnClick" Content="Зберегти" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
         </Grid>
 
     </Grid>

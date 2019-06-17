@@ -121,10 +121,11 @@ namespace AIS_DB6.ViewModels
 
         protected override void DeleteCurrent()
         {
-            //TODO do something with number lines
+         
             if (SelectedGood != null)
             {
                 db.Goods.Remove(SelectedGood.TheGood);
+
                 db.SaveChanges();
                 base.RefreshData();
             }

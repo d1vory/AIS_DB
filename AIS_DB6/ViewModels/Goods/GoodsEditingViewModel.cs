@@ -35,7 +35,9 @@ namespace AIS_DB6.ViewModels.Goods
                 good.Name = Name;
                 good.Characteristics = Characteristics;
                 good.SellingPrice = SellingPrice;
-               db.SaveChanges();
+                good.GoodsGroup = db.GoodsGroup.Find(SelectedGroupId);
+                good.Producer = db.Producers.Find(SelectedProducerId);
+                db.SaveChanges();
             
             }
 
