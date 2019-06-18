@@ -33,7 +33,7 @@ namespace AIS_DB6.Views
                 MessageBox.Show("Login or password is empty!");
                 return;
             }
-            MessageBox.Show($"Login successful for user {TBLogin.Text}");
+           
             // todo switch to main window
 
             if (TBLogin.Text.Equals("admin") && PBPassword.Password.Equals("admin"))
@@ -42,12 +42,22 @@ namespace AIS_DB6.Views
                 //navigate to admin page
 
             }
-
-            if (TBLogin.Text.Equals("director") && PBPassword.Password.Equals("director"))
+            else
             {
-                //navigate to director page
-                NavigationService.Navigate(new DirectorPage());
+                if (TBLogin.Text.Equals("director") && PBPassword.Password.Equals("director"))
+                {
+                    //navigate to director page
+                    NavigationService.Navigate(new DirectorPage());
+                }
+                else
+                {
+                    MessageBox.Show("Wrong login or password!");
+                }
+
             }
+            
+
+           
         }
 
         private void CancelBt_Click(object sender, RoutedEventArgs e)

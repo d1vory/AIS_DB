@@ -23,7 +23,7 @@ namespace AIS_DB6.ViewModels.Invoice__lines_Work
             return  SelectedWorkerId != 0 && TypeOfWork != null && WorkCost != 0.0;
         }
 
-        private async void SaveImplementation(object obj)
+        private  void SaveImplementation(object obj)
         {
           Thiswindow.DialogResult = true;
 

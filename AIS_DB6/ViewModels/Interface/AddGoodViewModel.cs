@@ -41,7 +41,7 @@ namespace AIS_DB6.ViewModels.Interface
             return GoodsQuantity != 0;
         }
 
-        private async void SaveImplementation(object obj)
+        private  void SaveImplementation(object obj)
         {
            
             ThisWindow.Close();

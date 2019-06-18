@@ -20,7 +20,7 @@ namespace AIS_DB6.ViewModels.invoice__lines_Goods
         private RelayCommand _editCommand;
         private RelayCommand _deleteCommand;
         private RelayCommand _addCommand;
-        private RelayCommand _printCommand;
+        
 
 
         public RelayCommand AddCommand => _addCommand ?? (_addCommand = new RelayCommand(AddImplementation, (o => true)));

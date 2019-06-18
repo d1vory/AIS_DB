@@ -133,6 +133,7 @@ namespace AIS_DB6.ViewModels.Interface
                 TotalCost += gi.LinePrice;
 
             }
+            GetData();
         }
 
         private RelayCommand _newClientCommand;
@@ -145,7 +146,7 @@ namespace AIS_DB6.ViewModels.Interface
             //TODO list doesnt update
             SupplierAdding ca = new SupplierAdding();
             ca.ShowDialog();
-            RefreshData();
+            GetData();
         }
 
         private RelayCommand _deleteCommand;

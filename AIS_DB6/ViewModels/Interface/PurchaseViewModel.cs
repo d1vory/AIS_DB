@@ -272,7 +272,7 @@ namespace AIS_DB6.ViewModels.Interface
             }
 
             db.Invoices.Add(inv);
-            db.SaveChanges();
+           await  db.SaveChangesAsync();
 
 
             MessageBox.Show("Накладна додана");

@@ -40,7 +40,7 @@ namespace AIS_DB6.ViewModels.Clients
             c.ApartmentNumber = ApartmentNumber;
             db.Clients.Add(c);
         
-            db.SaveChanges();
+           await db.SaveChangesAsync();
 
             Thiswindow.Close();
         }

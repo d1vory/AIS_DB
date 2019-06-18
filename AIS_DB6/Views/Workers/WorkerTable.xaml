@@ -38,16 +38,16 @@
         <Grid  Grid.Row="1">
 
             <Grid.ColumnDefinitions >
-                <ColumnDefinition  ></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-            </Grid.ColumnDefinitions>
 
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+
+            </Grid.ColumnDefinitions>
             <Button  Margin="5 0" Grid.Column="0" Command="{Binding Path= EditCommand}" Content="Редагувати"  ></Button>
             <Button Margin="5 0" Grid.Column="1" Command="{Binding Path = DeleteCommand}" Content="Видалити" ></Button>
             <Button Margin="5 0" Grid.Column="2" Command="{Binding Path=AddCommand}" Content="Додати"  ></Button>
-            <Button Margin="5 0" Grid.Column="3" Command="{Binding Path=PrintCommand}" Content="Друкувати звіт"  ></Button>
+
         </Grid>
     </Grid>
 </UserControl>
