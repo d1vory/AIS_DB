@@ -1,4 +1,4 @@
-﻿<Page x:Class="AIS_DB6.Views.AdminMainPage"
+﻿<Page x:Class="AIS_DB6.Views.DirectorPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:AIS_DB6.Views"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="AdminMainPage">
+      Title="DirectorPage">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -56,12 +56,16 @@
                         <ColumnDefinition Width="0.2*" ></ColumnDefinition>
                     </Grid.ColumnDefinitions>
 
-                    <Button Margin="0 10" Name="PurchaseBtn" Click="PurchaseBtn_OnClick" Grid.Column="1" Grid.Row="0"  Content="Зробити покупку"  />
-         
+                    <Button Margin="0 10" Name ="GoodsButton"  Grid.Column="1" Grid.Row="0" Click="GoodsButton_OnClick" Content="товари"  />
+                    <Button Margin="0 10" Name ="GoodsGroupButton" Click="GoodsGroupButton_OnClick"  Grid.Column="1" Grid.Row="1" Content="Групи товарів"  />
+                    <Button Margin="0 10" Name ="Producers" Click="Producers_OnClick" Grid.Column="1" Grid.Row="2" Content="Виробники"  />
 
-                    <Button Margin="0 10" Name ="GoodsButton"  Grid.Column="1" Grid.Row="1" Click="GoodsButton_OnClick" Content="товари"  />
-                    <Button Margin="0 10" Name ="GoodsGroupButton" Click="GoodsGroupButton_OnClick"  Grid.Column="1" Grid.Row="2" Content="Групи товарів"  />
-                    <Button Margin="0 10" Name ="Producers" Click="Producers_OnClick" Grid.Column="1" Grid.Row="3" Content="Виробники"  />
+                    <Button Margin="0 10" Name ="Suppliers" Click="Suppliers_OnClick"  Grid.Column="1" Grid.Row="3" Content="Постачальники"  />
+
+                    <Button Margin="0 10" Name="WorkersBtn" Click="WorkersBtn_OnClick" Grid.Column="1" Grid.Row="4" Content="робітники"  />
+
+                    <Button Margin="0 10" Name="ContractsBtn" Click="ContractsBtn_OnClick" Grid.Column="1" Grid.Row="5" Content="Договори"  />
+
 
                 </Grid>
 
@@ -69,7 +73,7 @@
         </DockPanel>
 
         <Grid Name="Gr"  Grid.Column="1">
-
+            
         </Grid>
     </Grid>
 </Page>

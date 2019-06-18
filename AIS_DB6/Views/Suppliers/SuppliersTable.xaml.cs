@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using AIS_DB6.ViewModels.Suppliers;
 
 namespace AIS_DB6.Views.Suppliers
 {
@@ -23,6 +24,8 @@ namespace AIS_DB6.Views.Suppliers
         public SuppliersTable()
         {
             InitializeComponent();
+
+            DataContext = new SupplierViewModel();
         }
     }
 }

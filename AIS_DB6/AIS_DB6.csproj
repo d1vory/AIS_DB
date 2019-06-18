@@ -110,6 +110,8 @@
     <Compile Include="ViewModels\Goods\GoodsViewModel.cs" />
     <Compile Include="ViewModels\Goods\GoodVM.cs" />
     <Compile Include="ViewModels\Interface\AddGoodViewModel.cs" />
+    <Compile Include="ViewModels\Interface\ConclusionContract.cs" />
+    <Compile Include="ViewModels\Interface\DirectorMainPageViewModel.cs" />
     <Compile Include="ViewModels\Interface\PurchaseViewModel.cs" />
     <Compile Include="ViewModels\Invoices\InvoiceAddingViewModel.cs" />
     <Compile Include="ViewModels\Invoices\InvoiceEdtingViewModel.cs" />
@@ -156,8 +158,8 @@
     <Compile Include="Views\Contract__Clauses\ContractClausesTable.xaml.cs">
       <DependentUpon>ContractClausesTable.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\DirectorMainPage.xaml.cs">
-      <DependentUpon>DirectorMainPage.xaml</DependentUpon>
+    <Compile Include="Views\DirectorPage.xaml.cs">
+      <DependentUpon>DirectorPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\GoodsGroups\GoodsGroupAdding.xaml.cs">
       <DependentUpon>GoodsGroupAdding.xaml</DependentUpon>
@@ -173,6 +175,9 @@
     </Compile>
     <Compile Include="Views\Interface\AddGoodWindow.xaml.cs">
       <DependentUpon>AddGoodWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Interface\ConclusionContract.xaml.cs">
+      <DependentUpon>ConclusionContract.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Interface\PurchaseView.xaml.cs">
       <DependentUpon>PurchaseView.xaml</DependentUpon>
@@ -200,6 +205,9 @@
     </Compile>
     <Compile Include="Views\Producers\ProducersTable.xaml.cs">
       <DependentUpon>ProducersTable.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SignInPage.xaml.cs">
+      <DependentUpon>SignInPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Suppliers\SupplierAdding.xaml.cs">
       <DependentUpon>SupplierAdding.xaml</DependentUpon>
@@ -253,7 +261,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\DirectorMainPage.xaml">
+    <Page Include="Views\DirectorPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -274,6 +282,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Interface\AddGoodWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Interface\ConclusionContract.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -310,6 +322,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Producers\ProducersTable.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SignInPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

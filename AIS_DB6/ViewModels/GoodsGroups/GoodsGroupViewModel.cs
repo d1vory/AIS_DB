@@ -99,8 +99,6 @@ namespace AIS_DB6.ViewModels.GoodsGroups
         {
             db = new AisContext();
 
-
-
             ObservableCollection<GoodsGroupVM> goodsTemp = new ObservableCollection<GoodsGroupVM>();
             var _goodGroups = await
                 (from gg in db.GoodsGroup
@@ -110,6 +108,7 @@ namespace AIS_DB6.ViewModels.GoodsGroups
 
             foreach (GoodsGroup goodGroup in _goodGroups)
             {
+                
                 goodsTemp.Add(new GoodsGroupVM() { TheGoodsGroup = goodGroup });
             }
 

@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace AIS_DB6.Views
+namespace AIS_DB6.Views.Interface
 {
     /// <summary>
-    /// Логика взаимодействия для DirectorMainPage.xaml
+    /// Логика взаимодействия для ConclusionContract.xaml
     /// </summary>
-    public partial class DirectorMainPage : Page
+    public partial class ConclusionContract : UserControl
     {
-        public DirectorMainPage()
+        public ConclusionContract()
         {
             InitializeComponent();
         }

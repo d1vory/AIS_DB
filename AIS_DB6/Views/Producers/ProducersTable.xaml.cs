@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using AIS_DB6.ViewModels.Producers;
 
 namespace AIS_DB6.Views.Producers
 {
@@ -23,6 +24,8 @@ namespace AIS_DB6.Views.Producers
         public ProducersTable()
         {
             InitializeComponent();
+
+            DataContext = new ProducerViewModel();
         }
     }
 }

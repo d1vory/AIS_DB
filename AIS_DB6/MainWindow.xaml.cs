@@ -16,6 +16,7 @@ using System.Windows.Shapes;
 using AIS_DB6.Models;
 using AIS_DB6.ViewModels;
 using AIS_DB6.ViewModels.GoodsGroups;
+using AIS_DB6.ViewModels.Interface;
 using AIS_DB6.ViewModels.Producers;
 using AIS_DB6.ViewModels.Suppliers;
 using AIS_DB6.Views;
@@ -43,8 +44,8 @@ namespace AIS_DB6
         {
             InitializeComponent();
 
-            PurchaseView pv = new PurchaseView();
-            this.Content = pv;
+            //PurchaseView pv = new PurchaseView();
+            //this.Content = pv;
 
             //Frame f = new Frame();
             //f.Content = new DirectorMainPage();
@@ -90,26 +91,31 @@ namespace AIS_DB6
 
             //LoginWindow lw = new LoginWindow();
             //lw.Show();
+
+
+            MainFrame.Navigate(new SignInPage());
         }
 
-        private void GoodsButton_OnClick(object sender, RoutedEventArgs e)
-        {
-            DataContext = new GoodsViewModel();
-        }
 
-        private void GoodsGroupButton_OnClick(object sender, RoutedEventArgs e)
-        {
-            DataContext = new GoodsGroupViewModel();
-        }
+        //private void GoodsButton_OnClick(object sender, RoutedEventArgs e)
+        //{
+            
+        //    RightPart.DataContext = new GoodsViewModel();
+        //}
 
-        private void Producers_OnClick(object sender, RoutedEventArgs e)
-        {
-            DataContext = new ProducerViewModel();
-        }
+        //private void GoodsGroupButton_OnClick(object sender, RoutedEventArgs e)
+        //{
+        //    RightPart.DataContext = new GoodsGroupViewModel();
+        //}
 
-        private void Suppliers_OnClick(object sender, RoutedEventArgs e)
-        {
-            DataContext = new SupplierViewModel();
-        }
+        //private void Producers_OnClick(object sender, RoutedEventArgs e)
+        //{
+        //    RightPart.DataContext = new ProducerViewModel();
+        //}
+
+        //private void Suppliers_OnClick(object sender, RoutedEventArgs e)
+        //{
+        //    RightPart.DataContext = new SupplierViewModel();
+        //}
     }
 }
