@@ -16,7 +16,7 @@
         xmlns:views="clr-namespace:AIS_DB6.Views"
         xmlns:interface="clr-namespace:AIS_DB6.ViewModels.Interface"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="650" Width="1000">
 
 
 

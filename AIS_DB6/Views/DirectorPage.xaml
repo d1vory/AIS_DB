@@ -46,7 +46,7 @@
                         <RowDefinition></RowDefinition>
                         <RowDefinition></RowDefinition>
                         <RowDefinition></RowDefinition>
-
+                        <RowDefinition></RowDefinition>
 
                     </Grid.RowDefinitions>
 
@@ -56,15 +56,16 @@
                         <ColumnDefinition Width="0.2*" ></ColumnDefinition>
                     </Grid.ColumnDefinitions>
 
-                    <Button Margin="0 10" Name ="GoodsButton"  Grid.Column="1" Grid.Row="0" Click="GoodsButton_OnClick" Content="товари"  />
-                    <Button Margin="0 10" Name ="GoodsGroupButton" Click="GoodsGroupButton_OnClick"  Grid.Column="1" Grid.Row="1" Content="Групи товарів"  />
-                    <Button Margin="0 10" Name ="Producers" Click="Producers_OnClick" Grid.Column="1" Grid.Row="2" Content="Виробники"  />
+                    <Button Margin="0 10" Name ="ContractConclusionButton"  Grid.Column="1" Grid.Row="0" Click="ContractConclusionButton_OnClick" Content="Додати угоду"  />
+                    <Button Margin="0 10" Name ="GoodsButton"  Grid.Column="1" Grid.Row="1" Click="GoodsButton_OnClick" Content="товари"  />
+                    <Button Margin="0 10" Name ="GoodsGroupButton" Click="GoodsGroupButton_OnClick"  Grid.Column="1" Grid.Row="2" Content="Групи товарів"  />
+                    <Button Margin="0 10" Name ="Producers" Click="Producers_OnClick" Grid.Column="1" Grid.Row="3" Content="Виробники"  />
 
-                    <Button Margin="0 10" Name ="Suppliers" Click="Suppliers_OnClick"  Grid.Column="1" Grid.Row="3" Content="Постачальники"  />
+                    <Button Margin="0 10" Name ="Suppliers" Click="Suppliers_OnClick"  Grid.Column="1" Grid.Row="4" Content="Постачальники"  />
 
-                    <Button Margin="0 10" Name="WorkersBtn" Click="WorkersBtn_OnClick" Grid.Column="1" Grid.Row="4" Content="робітники"  />
+                    <Button Margin="0 10" Name="WorkersBtn" Click="WorkersBtn_OnClick" Grid.Column="1" Grid.Row="5" Content="робітники"  />
 
-                    <Button Margin="0 10" Name="ContractsBtn" Click="ContractsBtn_OnClick" Grid.Column="1" Grid.Row="5" Content="Договори"  />
+                    <Button Margin="0 10" Name="ContractsBtn" Click="ContractsBtn_OnClick" Grid.Column="1" Grid.Row="6" Content="Договори"  />
 
 
                 </Grid>

@@ -84,9 +84,12 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Models\GoodsInfo.cs" />
+    <Compile Include="Models\SuperContract.cs" />
+    <Compile Include="Models\SuperInvoice.cs" />
     <Compile Include="Models\WorkInfo.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Tools\CrudVMBase.cs" />
+    <Compile Include="Tools\PrintDG.cs" />
     <Compile Include="Tools\RelayCommand.cs" />
     <Compile Include="Tools\StrInt.cs" />
     <Compile Include="ViewModels\Clients\ClientAddingViewModel.cs" />
@@ -110,9 +113,11 @@
     <Compile Include="ViewModels\Goods\GoodsViewModel.cs" />
     <Compile Include="ViewModels\Goods\GoodVM.cs" />
     <Compile Include="ViewModels\Interface\AddGoodViewModel.cs" />
-    <Compile Include="ViewModels\Interface\ConclusionContract.cs" />
+    <Compile Include="ViewModels\Interface\ConclusionContractViewModel.cs" />
     <Compile Include="ViewModels\Interface\DirectorMainPageViewModel.cs" />
     <Compile Include="ViewModels\Interface\PurchaseViewModel.cs" />
+    <Compile Include="ViewModels\Interface\SuperContractViewModel.cs" />
+    <Compile Include="ViewModels\Interface\SuperInvoiceViewModel.cs" />
     <Compile Include="ViewModels\Invoices\InvoiceAddingViewModel.cs" />
     <Compile Include="ViewModels\Invoices\InvoiceEdtingViewModel.cs" />
     <Compile Include="ViewModels\Invoices\InvoiceViewModel.cs" />
@@ -181,6 +186,12 @@
     </Compile>
     <Compile Include="Views\Interface\PurchaseView.xaml.cs">
       <DependentUpon>PurchaseView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Interface\SuperContractView.xaml.cs">
+      <DependentUpon>SuperContractView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Interface\SuperInvoiceView.xaml.cs">
+      <DependentUpon>SuperInvoiceView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Invoices\InvoiceAdding.xaml.cs">
       <DependentUpon>InvoiceAdding.xaml</DependentUpon>
@@ -290,6 +301,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Interface\PurchaseView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Interface\SuperContractView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Interface\SuperInvoiceView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

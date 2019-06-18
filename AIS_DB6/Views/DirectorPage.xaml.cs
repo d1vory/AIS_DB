@@ -16,6 +16,7 @@ using AIS_DB6.ViewModels.Suppliers;
 using AIS_DB6.Views.Contracts;
 using AIS_DB6.Views.Goods;
 using AIS_DB6.Views.GoodsGroups;
+using AIS_DB6.Views.Interface;
 using AIS_DB6.Views.Producers;
 using AIS_DB6.Views.Suppliers;
 using AIS_DB6.Views.Workers;
@@ -70,7 +71,13 @@ namespace AIS_DB6.Views
         private void ContractsBtn_OnClick(object sender, RoutedEventArgs e)
         {
             Gr.Children.Clear();
-            Gr.Children.Add(new ContractTable());
+            Gr.Children.Add(new SuperContractView());
+        }
+
+        private void ContractConclusionButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            Gr.Children.Clear();
+            Gr.Children.Add(new ConclusionContract());
         }
     }
 }

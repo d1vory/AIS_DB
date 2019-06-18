@@ -12,19 +12,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using AIS_DB6.ViewModels.Interface;
 
 namespace AIS_DB6.Views.Interface
 {
     /// <summary>
-    /// Логика взаимодействия для ConclusionContractViewModel.xaml
+    /// Логика взаимодействия для SuperInvoiceView.xaml
     /// </summary>
-    public partial class ConclusionContract : UserControl
+    public partial class SuperInvoiceView : UserControl
     {
-        public ConclusionContract()
+        public SuperInvoiceView()
         {
             InitializeComponent();
-            DataContext = new ConclusionContractViewModel();
         }
     }
 }

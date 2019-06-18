@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AIS_DB6.Tools
 {
-    class StrInt
+    public class StrInt
     {
         private int _id;
 

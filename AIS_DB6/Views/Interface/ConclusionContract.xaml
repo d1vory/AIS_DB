@@ -26,10 +26,13 @@
 
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
+
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
         <TextBlock Grid.Row="0" Grid.ColumnSpan="2"  Text="Укладання договору"  HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18"></TextBlock>
         <TextBlock Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Bottom" Text="Вибрати Постачальника"></TextBlock>
-        <ComboBox Grid.Row="2" Grid.Column="0" ItemsSource ="{Binding Path= ClientIds}" DisplayMemberPath="Str"  SelectedValuePath="SelectedClientId" SelectedItem="{Binding Path=SelectedClientId, Mode=TwoWay}" Margin="5 5"></ComboBox>
+        <ComboBox Grid.Row="2" Grid.Column="0" ItemsSource ="{Binding Path= SupplierIds}" DisplayMemberPath="Str"   SelectedItem="{Binding Path=SelectedSupplierId, Mode=TwoWay}" Margin="5 5"></ComboBox>
         <Button   Grid.Row="2" Grid.Column="1" Margin="5 5" Command="{Binding Path= NewClientCommand}" Content="Додати нового постачальника"></Button>
 
 
@@ -69,10 +72,18 @@
             </DataGrid.Columns>
 
         </DataGrid>
+
+
+        <TextBlock Grid.Row ="11"  Grid.Column="0" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Дата підписання"  VerticalAlignment="Bottom" Margin="0 5"/>
+        <TextBlock Grid.Row ="11" Grid.Column="1"  HorizontalAlignment="Center" TextWrapping="Wrap" Text="Дата закінчення" VerticalAlignment="Bottom"  Margin="0 5"/>
+
+        <DatePicker Grid.Row ="12"  Grid.Column="0"  SelectedDate="{Binding Path=SelectedSignDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Center" VerticalAlignment="Top" ></DatePicker>
+        <DatePicker Grid.Row ="12"  Grid.Column="1" SelectedDate="{Binding Path=SelectedTerminationDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Center" VerticalAlignment="Top" ></DatePicker>
+
         <Button   Grid.Row="9" Grid.Column="0" Margin="5 5" Command="{Binding Path= AddGoodCommand}" Content="Додати Товар"></Button>
         <Button   Grid.Row="9" Grid.Column="1" Margin="5 5" Command="{Binding Path=DeleteCommand}" Content="Видалити Товар"></Button>
 
-        <Button   Grid.Row="10" Grid.Column="0" Margin="5 5" Command="{Binding Path=AddWorkCommand}" Content="Додати Новий товар"></Button>
+        <Button   Grid.Row="10" Grid.Column="0" Margin="5 5" Command="{Binding Path=AddNewGoodCommand}" Content="Додати Новий товар"></Button>
 
         <Grid Grid.Row ="10" Grid.Column="1">
             <Grid.ColumnDefinitions>
@@ -83,8 +94,8 @@
             <TextBlock  Grid.Column="1"  Text="{Binding Path=TotalCost}"  HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="18"></TextBlock>
         </Grid>
 
-        <Button   Grid.Row="11" Grid.Column="0" Margin="100 5" Content="Назад"></Button>
-        <Button   Grid.Row="11" Grid.Column="1" Margin="100 5" Command="{Binding Path=SaveCommand}" Content="Зберегти"></Button>
+        <Button   Grid.Row="13" Grid.Column="0" Margin="100 5" Content="Назад"></Button>
+        <Button   Grid.Row="13" Grid.Column="1" Margin="100 5" Command="{Binding Path=SaveCommand}" Content="Зберегти"></Button>
 
     </Grid>
 </UserControl>

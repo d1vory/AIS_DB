@@ -1,0 +1,36 @@
+﻿<UserControl x:Class="AIS_DB6.Views.Interface.SuperContractView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:AIS_DB6.Views.Interface"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="0.1*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <DataGrid Grid.Row="0"  Name="SupGrid"  Grid.Column="0" 
+                  ItemsSource="{Binding Path= Contracts}"
+                  AutoGenerateColumns="False"                
+                  SelectionMode="Single"
+                  IsReadOnly="True"
+                  HeadersVisibility="Column"          >
+            <DataGrid.Columns>
+                <DataGridTextColumn  Width="0.25*" Binding="{Binding Path=ContractId, Mode=TwoWay}"  Header="Код контракту"></DataGridTextColumn>
+                <DataGridTextColumn  Width="0.25*" Binding="{Binding Path=GoodsName, Mode=TwoWay}" Header="Назва товару"></DataGridTextColumn>
+                <DataGridTextColumn  Width="0.25*"  Binding="{Binding Path=GroupName, Mode=TwoWay}"  Header="Група"></DataGridTextColumn>
+                <DataGridTextColumn  Width="0.25*"  Binding="{Binding Path=ProducerName, Mode=TwoWay}"  Header="Виробник"></DataGridTextColumn>
+                <DataGridTextColumn  Width="0.25*" Binding="{Binding Path=GoodsQuantity, Mode=TwoWay}" Header="Кількість"></DataGridTextColumn>
+                <DataGridTextColumn  Width="0.25*"  Binding="{Binding Path=GoodsPrice, Mode=TwoWay}"  Header="Ціна"></DataGridTextColumn>
+               
+                <DataGridTextColumn  Width="0.25*"  Binding="{Binding Path=LinePrice, Mode=TwoWay}"  Header="Вартість"></DataGridTextColumn>
+
+            </DataGrid.Columns>
+
+        </DataGrid>
+        <Button Grid.Row="1" Name="PrintBtn" Click="PrintBtn_OnClick" Content="Print" ></Button>
+    </Grid>
+</UserControl>

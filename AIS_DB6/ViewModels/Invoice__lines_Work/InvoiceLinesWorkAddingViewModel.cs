@@ -28,7 +28,7 @@ namespace AIS_DB6.ViewModels.Invoice__lines_Work
           Thiswindow.DialogResult = true;
 
             //InvoiceLinesWork ilw = new InvoiceLinesWork();
-            //ilw.InvoiceId = SelectedInvoiceId;
+            //ilw.ContractId = SelectedInvoiceId;
             //ilw.WorkerId = SelectedWorkerId;
             //ilw.StartDate = SelectedDate;
             //ilw.WorkCost = WorkCost;

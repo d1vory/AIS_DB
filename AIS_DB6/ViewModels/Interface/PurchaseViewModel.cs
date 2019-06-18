@@ -274,6 +274,11 @@ namespace AIS_DB6.ViewModels.Interface
             db.Invoices.Add(inv);
             db.SaveChanges();
 
+
+            MessageBox.Show("Накладна додана");
+            AddedGoods.Clear();
+            StartDate = DateTime.Today;
+            TotalCost = 0;
         }
 
         protected override void RefreshData()

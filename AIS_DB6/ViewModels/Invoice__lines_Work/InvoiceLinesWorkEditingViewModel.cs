@@ -29,8 +29,8 @@ namespace AIS_DB6.ViewModels.Invoice__lines_Work
                 i.InvoiceId == InvoiceId && i.WorkerId == WorkerId);
             if (ilw != null)
             {
-                //ilw.InvoiceId = SelectedInvoiceId;
-                //ilw.InvoiceId = SelectedInvoiceId;
+                //ilw.ContractId = SelectedInvoiceId;
+                //ilw.ContractId = SelectedInvoiceId;
                 //ilw.WorkerId = SelectedWorkerId;
                 ilw.StartDate = SelectedDate;
                 ilw.WorkCost = WorkCost;

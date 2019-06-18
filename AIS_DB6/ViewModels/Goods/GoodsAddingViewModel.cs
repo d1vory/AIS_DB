@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Net.Sockets;
 using System.Text;
@@ -29,13 +30,13 @@ namespace AIS_DB6.ViewModels
 
             Good good = new Good();
             good.GoodsId = 0;
-            good.GoodsGroupId = SelectedGroupId;
-            good.ProducerId = SelectedProducerId;
+            good.GoodsGroupId = SelectedGroupId.Id;
+            good.ProducerId = SelectedProducerId.Id;
             good.Name = Name;
             good.Characteristics = Characteristics;
             good.SellingPrice = SellingPrice;
-            good.GoodsGroup = db.GoodsGroup.Find(SelectedGroupId);
-            good.Producer = db.Producers.Find(SelectedProducerId);
+            good.GoodsGroup = db.GoodsGroup.Find(SelectedGroupId.Id);
+            good.Producer = db.Producers.Find(SelectedProducerId.Id);
           
 
             db.Goods.Add(good);
@@ -53,26 +54,26 @@ namespace AIS_DB6.ViewModels
             set => _thiswindow = value;
         }
 
-        private int _selectedGroupId;
+        private StrInt _selectedGroupId;
 
-        public int SelectedGroupId
+        public StrInt SelectedGroupId
         {
             get => _selectedGroupId;
             set => _selectedGroupId = value;
         }
 
-        private int _selectedProducerId;
+        private StrInt _selectedProducerId;
 
-        public int SelectedProducerId
+        public StrInt SelectedProducerId
         {
             get => _selectedProducerId;
             set => _selectedProducerId = value;
         }
 
 
-        private List<int> _goodsGroupIds ;
+        private ObservableCollection<StrInt> _goodsGroupIds ;
 
-        public List<int> GoodsGroupIds
+        public ObservableCollection<StrInt> GoodsGroupIds
         {
             get => _goodsGroupIds;
             set => _goodsGroupIds = value;
@@ -80,9 +81,9 @@ namespace AIS_DB6.ViewModels
 
 
 
-        private List<int> _producerIds;
+        private ObservableCollection<StrInt> _producerIds;
 
-        public List<int> ProducerIds
+        public ObservableCollection<StrInt> ProducerIds
         {
             get => _producerIds;
             set => _producerIds = value;
@@ -112,22 +113,25 @@ namespace AIS_DB6.ViewModels
             set => _characteristics = value;
         }
 
-        protected async override void GetData()
+        protected override async void GetData()
         {
+
+            GoodsGroupIds = new ObservableCollection<StrInt>();
+            ProducerIds = new ObservableCollection<StrInt>();
             await Task.Run(() =>
             {
                 foreach (Models.GoodsGroup gg in db.GoodsGroup)
                 {
-                    GoodsGroupIds.Add(gg.GoodsGroupId);
+                    GoodsGroupIds.Add(new StrInt(gg.GoodsGroupId,gg.Name));
                 }
 
                 OnPropertyChanged();
                 foreach (Producer pp in db.Producers)
                 {
-                    ProducerIds.Add(pp.ProducerId);
+                    ProducerIds.Add(new StrInt(pp.ProducerId,pp.Name));
                 }
 
-                OnPropertyChanged();
+               
 
             });
 
@@ -137,8 +141,7 @@ namespace AIS_DB6.ViewModels
 
         public GoodsAddingViewModel(Window w):base()
         {
-            GoodsGroupIds = new List<int>();
-            ProducerIds = new List<int>();
+          
             Thiswindow = w;
         }
 

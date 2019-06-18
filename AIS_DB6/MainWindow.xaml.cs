@@ -92,6 +92,11 @@ namespace AIS_DB6
             //LoginWindow lw = new LoginWindow();
             //lw.Show();
 
+            //SuperContractView sc = new SuperContractView();
+            //this.Content = sc;
+
+            //ConclusionContract cc = new ConclusionContract();
+            //this.Content = cc;
 
             MainFrame.Navigate(new SignInPage());
         }

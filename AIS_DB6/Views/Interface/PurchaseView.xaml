@@ -29,7 +29,7 @@
         </Grid.RowDefinitions>
                 <TextBlock Grid.Row="0" Grid.ColumnSpan="2"  Text="Покупка"  HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18"></TextBlock>
      <TextBlock Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Bottom" Text="Вибрати Покупця"></TextBlock>
-        <ComboBox Grid.Row="2" Grid.Column="0" ItemsSource ="{Binding Path= ClientIds}" DisplayMemberPath="Str"  SelectedValuePath="SelectedClientId" SelectedItem="{Binding Path=SelectedClientId, Mode=TwoWay}" Margin="5 5"></ComboBox>
+        <ComboBox Grid.Row="2" Grid.Column="0" ItemsSource ="{Binding Path= ClientIds}" DisplayMemberPath="Str"  SelectedItem="{Binding Path=SelectedClientId, Mode=TwoWay}" Margin="5 5"></ComboBox>
         <Button   Grid.Row="2" Grid.Column="1" Margin="5 5" Command="{Binding Path= NewClientCommand}" Content="Додати покупця"></Button>
 
 

@@ -550,8 +550,8 @@ namespace AIS_DB6.Annotations
   /// <code>
   /// [SourceTemplate]
   /// public static void something(this Entity x, [Macro(Expression = "guid()", Editable = -1)] string newguid) {
-  ///   /*$ var $x$SelectedClientId = "$newguid$" + x.ToString();
-  ///   x.DoSomething($x$SelectedClientId); */
+  ///   /*$ var $x$SelectedSupplierId = "$newguid$" + x.ToString();
+  ///   x.DoSomething($x$SelectedSupplierId); */
   /// }
   /// </code>
   /// </example>

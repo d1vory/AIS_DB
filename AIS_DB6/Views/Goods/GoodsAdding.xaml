@@ -46,10 +46,10 @@
                     <TextBlock Grid.Row ="2" Grid.Column="0"  HorizontalAlignment="Center" TextWrapping="Wrap" Text="Код групи товару" VerticalAlignment="Center"/>
                     <TextBlock Grid.Row ="2" Grid.Column="1"  HorizontalAlignment="Center" TextWrapping="Wrap" Text="Код виробника" VerticalAlignment="Center"/>
 
-                    <ComboBox  Grid.Row ="3" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center"  ItemsSource ="{Binding Path= GoodsGroupIds}" SelectedItem="{Binding Path=SelectedGroupId}"  Width="120">
+                    <ComboBox  Grid.Row ="3" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" DisplayMemberPath="Str" ItemsSource ="{Binding Path= GoodsGroupIds}" SelectedItem="{Binding Path=SelectedGroupId}"  Width="120">
                       
                     </ComboBox>
-                    <ComboBox  Grid.Row ="3" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="120" ItemsSource ="{Binding Path= ProducerIds}" SelectedItem="{Binding Path=SelectedProducerId}">
+                    <ComboBox  Grid.Row ="3" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" DisplayMemberPath="Str" Width="120" ItemsSource ="{Binding Path= ProducerIds}" SelectedItem="{Binding Path=SelectedProducerId}">
                         
                     </ComboBox>
 

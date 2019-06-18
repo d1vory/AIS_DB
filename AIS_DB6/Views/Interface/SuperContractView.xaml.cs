@@ -12,19 +12,27 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using AIS_DB6.Tools;
 using AIS_DB6.ViewModels.Interface;
 
 namespace AIS_DB6.Views.Interface
 {
     /// <summary>
-    /// Логика взаимодействия для ConclusionContractViewModel.xaml
+    /// Логика взаимодействия для SuperContractView.xaml
     /// </summary>
-    public partial class ConclusionContract : UserControl
+    public partial class SuperContractView : UserControl
     {
-        public ConclusionContract()
+        public SuperContractView()
         {
             InitializeComponent();
-            DataContext = new ConclusionContractViewModel();
+            DataContext = new SuperContractViewModel();
+        }
+
+        private void PrintBtn_OnClick(object sender, RoutedEventArgs e)
+        {
+            PrintDG print = new PrintDG();
+
+            print.printDG(SupGrid, "Title");
         }
     }
 }
